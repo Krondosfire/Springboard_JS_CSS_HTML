@@ -1,0 +1,265 @@
+h1 { 
+    color: hsl(230, 35%, 38%);
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 4rem;
+    font-family: 'Cambria', Helvetica, monospace;
+}
+
+body {
+    background: linear-gradient(to right, white,  beige);
+}
+
+p {
+    color: antiquewhite;
+    line-height: .1;
+    word-spacing: 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    justify-content: center;
+}
+
+h2 {
+    color: hsl(230, 35%, 38%);
+    background-color: hsla(410, 95%, 57%, 0.8);
+    font-weight: 200;
+    font-family: Calibri, Helvetica, sans-serif;
+    text-decoration: wavy underline;
+}
+
+ h3 {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    letter-spacing: 5px;
+ }
+
+ label {
+    color: hsl(7, 92%, 19%);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: .8rem;
+    font-weight: bold;
+ }
+
+ h4 {
+    color: hsl(118, 85%, 31%);
+    font-family: 'Tahoma', Courier, monospace;
+    font-size: 1.2rem;
+    text-align: center;
+ }
+ li {
+    color: hsla(234, 90%, 32%, 0.897);
+    font-family: 'Cambria', Tahoma, sans-serif;
+    font-size: 1.2rem;
+    list-style-type: none;
+ }
+
+
+table {
+    border-collapse: collapse;
+    /* background-color: hsl(0, 5%, 76%); */
+    
+    text-wrap: wrap;
+    width: 100%;
+    border-radius: 10px solid hsl(0, 93%, 41%);
+}
+thead {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    border-radius: 50px;
+   
+}
+
+td, th {
+    
+    padding: 10px;
+    margin: 100px;
+    border-radius: 10px;
+    display: table;
+    display: table-cell;
+    vertical-align: middle;
+    color:aliceblue
+}
+
+tbody {
+    
+    border-radius: 10px;
+    background: none;
+} 
+caption {
+    color: hsl(0, 0%, 0%);
+    background-color: hsla(410, 95%, 57%, 0.8);
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    letter-spacing: 5px;
+    border-radius: 10px;
+} 
+ul {
+    color: hsla(234, 90%, 32%, 0.897);
+    font-family: 'Cambria', Tahoma, sans-serif;
+    font-size: 1.2rem;
+ } 
+
+.p1 {
+    color: hsla(253, 98%, 38%, 0.815);
+    text-align: left;
+    line-height: .1;
+    word-spacing: 3px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+form {
+    background-color: hsl(0, 5%, 76%);
+    color: hsl(214, 99%, 35%);
+    text-align: center;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    font-size: 1.2rem;
+    border: 0.1px solid hsl(0, 0%, 0%);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    align-items: center;
+    
+}
+
+option {
+    color: hsl(0, 0%, 0%);
+    background-color: hsl(0, 17%, 83%);
+    font-size: 1.2em;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 0%);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.o1 {
+    color: hsl(0, 0%, 0%);
+    background-color: antiquewhite;
+    font-size: 0.85em;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    text-align: center;
+   
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+.o3 {
+    color: lightseagreen;
+    width: 98%;
+	font-size: 0.85em;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+    justify-content: center;
+    float: center;
+    clear: none;
+}
+
+img {
+	
+	width: 10%;
+	max-width: 300px;
+	border: 10px solid cadetblue;
+	border-width: 5px;
+	border-radius: 10px;
+	margin: 0 30px 20px 800px;
+    align-items: center;
+  
+}
+
+.cell {
+	width: 50px;
+	height: 10px;
+	background-color: darkgreen;
+	border-radius: 100px;
+	outline: 2px solid white;
+    text-align: center;
+    padding: 10 10 10;
+    margin: 10 10 10;
+    
+}
+.cell2 {
+	width: 90px;
+	height: 10px;
+	border-radius: 100px;
+	outline: 2px solid white;
+    text-align: center;
+    align-items: right;
+    padding: 10 10 10;
+    margin: 10 10 10;
+    
+}
+
+.cell3 {
+	width: 50px;
+	height: 10px;
+	text-align: center;
+    padding: 10 10 10;
+    margin: 10 10 10;
+    display:block;
+    justify-content: center;
+}
+.basic {
+    color: hsl(0, 0%, 0%);
+    background-color: cadetblue;
+    font-size: 1.2em;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 0%);
+    padding: 1px 0 0 0;
+    margin: 1px 3px 1px 3px;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 0%);
+    width: 20%;
+    float: right;
+    clear: none;
+}
+.contact {
+    color: hsl(0, 0%, 0%);
+    background-color: cadetblue;
+    font-size: 1.2em;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 0%);
+    padding: 1px 0 0 0;
+    margin: 1px 3px 1px 3px;
+    border-radius: 10px;
+    width: 50%;
+    float: center;
+    clear: none;
+}
+
+.outerbasic {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    display: inline block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.school {
+    color: hsl(0, 0%, 0%);
+    background-color: skyblue;
+    font-size: 1.2em;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 0%);
+    padding: 1px 0 0 0;
+    margin: 1px 3px 1px 3px;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 0%);
+    width: 20%;
+    float: right;
+    clear: none;
+}

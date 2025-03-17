@@ -1,0 +1,97 @@
+
+/* Universal selector:
+/* * { 
+    text-decoration: underline gray dotted;
+    border: 2px solid orange;
+} */
+
+img {
+    width: 500px;   
+}
+
+#logo1 {
+    width: 75px;
+}
+
+h1{
+    color: goldenrod;
+}
+
+h2 {
+    color: teal 
+}
+
+.poem {
+    width: 500px;
+    color: darkred;
+    font-style: italic;
+}
+
+ .link1 {
+    color: darkgreen;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px gray;
+    text-decoration: none;
+} 
+
+nav a {
+    color: darkblue;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: darkred;
+}
+
+/* p + h3 {
+    color: orangered;
+} */
+
+h2 + h3 {
+    color: darkred;
+}
+
+ #works li {
+    color: darkgreen;
+    font-weight: bold;
+    font-size: 16px;
+}  
+
+#works > li {
+    color: darkblue;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+input:focus {
+    background-color: lightyellow;
+} 
+
+input::placeholder {
+    color: darkred;
+    font-style: italic;
+}
+input:focus::placeholder {
+    color: darkblue;
+}
+
+input[type="text"] {
+    background-color: lightskyblue;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+ 
+.poem p::first-letter {
+    color: darkred;
+    font-size: 1.5em;
+}
+
+.poem p::first-line {
+    color: cadetblue;
+    font-size: 1.5em;
+}

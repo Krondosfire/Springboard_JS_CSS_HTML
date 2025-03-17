@@ -1,0 +1,35 @@
+h1 { 
+    color: rgb(187, 5, 25);
+    background-color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    letter-spacing: 20px;
+    font-size: 10vw;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    /*background-color: rgb(203, 124, 240);*/
+    background: linear-gradient(to left, cyan 45%, orange, red, green, blue, violet);
+}
+
+p {
+    color: dimgray;
+    text-align: justify;
+    line-height: 1;
+    word-spacing: 3px;
+    text-indent: 50px;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+h2 {
+    color: hsl(230, 35%, 38%);
+    background-color: hsla(410, 95%, 57%, 0.8);
+    font-weight: 200;
+    font-family: Calibri, Helvetica, sans-serif;
+    text-decoration: wavy underline;
+}
+
+ h3 {
+    color: hsl(100, 92%, 54%);
+    background-color: hsl(266, 92%, 54%);
+ }

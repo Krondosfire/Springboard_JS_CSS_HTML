@@ -1,0 +1,35 @@
+h1 {
+    font-size: 2em;
+    color: darkgreen;
+    /* transition: all 1s; */
+    transition: font-size 1.5s, color 3s
+}
+
+h1:hover  {
+    font-size: 4em;
+    color: navy;
+}
+
+button:hover {
+    transform: translateX(600px);
+    /* transition: transform 2s cubic-bezier(0.5, 0, 0.75, 0); */
+    transition: transform 2s ease-in-out;
+}
+
+a {
+    display: inline-block;
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 1em;
+    border: 3px solid navy;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: navy;
+    transition: all 0.3s ease-in;
+}
+
+a:hover {
+   color: aliceblue; 
+   background-color: brown;
+   border: none;
+}

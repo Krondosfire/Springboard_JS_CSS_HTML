@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Forms Demo</title>
+</head>
+<body>
+  
+  <form >
+    <div><label><b>Contact me</b></label></div>
+    <div><label>First Name: <input
+      name="fname"
+      type="text"
+      placeholder="Name"
+      minlength="2"
+      maxlength="15"
+      required></label></div><br>
+    <div><label>Last Name: <input
+      name="lname"
+      type="text"
+      placeholder="Surname"
+      minlength="2"
+      maxlength="25"
+      required></label></div><br>
+      <div><label>Organization: <input
+        name="company"
+        type="text"
+        placeholder="Company"
+        minlength="2"
+        maxlength="25"
+        required></label></div><br>
+      <div><label>Email: <input type="email" placeholder="Email" name="email" required></label></div> <br>
+      <div><label> Phone: <input type="tel" placeholder="Phone" name="phone" required></label></div> <br>
+      <div><label>Prefered method to be contacted:</label></div>
+    <div><input type="radio" name="contact-back" value="Call" required> Call <br>
+    <input type="radio" name="contact-back" value="Text" required> SMS <br>
+    <input type="radio" name="contact-back" value="Email" required> Email <br>
+    <input type="radio" name="contact-back" value="Linkedin" required> LinkedIn </label></div><br>
+    <div><label>Select a reason for contacting me:</label></div>
+      <div><select name="state" required>
+        <option value="">--Choose One--</option>
+        <option value="HR">Job Interview</option>
+        <option value="PT">Partnership</option>
+        <option value="IF">Product Presentation</option>
+        <option value="SE">Something Else</option>
+      </select>
+      </div> <br>
+      <div><label>Message:</label></div>
+       <div><label><textarea name="message" cols="30" rows="10" minlength="5" maxlength="200">Additional Information (optional):</textarea></label></div><br>
+
+    <div><button type="submit">Submit Form</button></div>
+  </form>
+
+
+
+
+
+  <button>Our <b>First</b> Button!</button>
+  <h2>Register</h2>
+  <form>
+    <button type="button">Click Me</button>
+    <input type="email" placeholder="Email" name="email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="checkbox" name="tos-agree"> I agree to the terms of service
+    <p>Select Shirt Size</p>
+    <input type="radio" name="shirt-size" value="XS"> XS <br>
+    <input type="radio" name="shirt-size" value="S"> S <br>
+    <input type="radio" name="shirt-size" value="M"> M <br>
+    <input type="radio" name="shirt-size" value="L"> Large <br>
+
+    <button type="submit">Submit Form</button>
+    <!-- <input type="submit" value="GO!"> -->
+  </form>
+
+  <h2>Other Input Types</h2>
+  <form>
+    Pick a Color: <input type="color" name="color">
+    Enter Your Birthday: <input type="date" name="birthday">
+    How Happy Are You? <input type="range" name="happiness" min="1" max="10" step="2">
+
+    <br>
+    Select a State:
+    <select name="state">
+      <option value="">--Choose Your State--</option>
+      <option value="AL">Alabama</option>
+      <option value="AK">Alaska</option>
+      <option value="AZ">Arizona</option>
+      <option value="AR">Arkansas</option>
+    </select>
+    <br>
+    Please Draft an Exquisite Essay:
+    <textarea name="essay" cols="30" rows="10" minlength="5" maxlength="200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aperiam cum</textarea>
+    <button type="submit">Submit Form</button>
+  </form>
+
+  <form method="post" enctype="multipart/form-data">
+    Choose file to upload:
+    <input type="file" accept="image/*" capture>
+    <!-- <input type="file" capture="user" name="my-file"> -->
+    <button type="submit">Upload File</button>
+  </form>
+
+  <h2>Search Reddit:</h2>
+  <form action="https://www.reddit.com/search" method="get">
+    <input type="text" name="q" placeholder="Search Term">
+    <br>
+    Sort By:
+    <select name="sort">
+      <option value="top">Top</option>
+      <option value="new">New</option>
+      <option value="comments">Comments</option>
+    </select>
+    <button type="submit">Search!</button>
+    <!-- https://www.reddit.com/search?q=pickles&sort=top -->
+  </form>
+
+  <form method="post" enctype="multipart/form-data">
+    <label>
+      This won't actually work, but go ahead and pick a file!
+      <input type="file">
+    </label>
+  </form>
+
+
+</body>
+</html>

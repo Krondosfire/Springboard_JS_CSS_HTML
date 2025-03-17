@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Problem Solve Practice 1</title>
+</head>
+<body>
+    <script src="practice_01.js"></script>
+    <h1><span>Problem Solving</span></h1>
+    <h6></h6>
+
+    <h3>FizzBuzz</h3>
+        <div><span>You are given a positive integer number `n`, where it is less than 100 (excluded).
+
+            For every number up to `n` (included):
+            
+            - Print `Fizz` if the number is divisible by `3`.
+            - Print `Buzz` if the number is divisible by `5`.
+            - Print `FizzBuzz` if the number is divisible by both `3` and `5`.
+            - Print the number if it is not divisible by `3` or `5`.
+            
+            Print `Error` if unexpected happens and stop the execution.
+            
+            Write a function `fizzBuzz` using JavaScript that solves the above problem and satisfies the conditions.</span></div>
+            <div><span>Pseudocode:</span></div>
+        <li> algorithm FizzBuzz, takes n, returns nothing:<br>
+            if n is not a positive integer that is less than 100:<br>
+                print Error and stop<br>
+        
+            for each integer from 1 to n (both included):<br>
+                if the number is divisible by 3:<br>
+                    print Fizz<br>
+                if the number is divisible by 5:<br>
+                    print Buzz<br>
+                if the number is divisible by 3 and 5:<br>
+                    print FizzBuzz<br>
+                if the number is not divisible by 3 or 5:<br>
+                    print the number<br>
+        
+             
+          </li>
+          <div><span>For n = 0</span></div>
+          <li>Error</li>
+          <div><span>For n = 100</span></div>
+          <li>Error</li>
+          <div><span>For n = 16</span></div>
+          <li>1<br>
+            2<br>
+            Fizz<br>
+            4<br>
+            Buzz<br>
+            Fizz<br>
+            7<br>
+            8<br>
+            Fizz<br>
+            Buzz<br>
+            11<br>
+            Fizz<br>
+            13<br>
+            14<br>
+            FizzBuzz<br>
+            16<br>
+            r<br></li>
+    <h3>Letter Count</h3>
+    <div><span>You are given a string `word` consisting of alphabetical characters.
+
+        For each unique letter in the `word`:
+        
+        - Return the lower-case letter followed by the number of times it occurs in the `word`.
+        
+        Print `Error` if unexpected happens and stop the execution.
+        
+        Write a function `letterOccurrence` using JavaScript that solves the above problem and satisfies the conditions. </span></div>
+        <div><span>Pseudocode:</span></div>
+        <div><li>algorithm LetterCount, takes word, returns a dictionary with letter counts:<br>
+            if word is not a string of alphabetical characters:<br>
+                print Error and stop<br>
+        
+            create a dictionary to hold letter counts<br>
+        
+            for each letter in word:<br>
+                if dictionary already has the letter:<br>
+                    increment the count of the letter by 1<br>
+                else<br>
+                    set the count of the letter to 1<br>
+        
+            return the dictionary that holds the letter counts<br>
+        </li></div>  
+        <div><span>For word = "Ceasar42", prints:</span></div>
+          <li>Error</li>
+          <div><span>For word = "Ceasar", returns:</span></div>
+          <li>(c: 1, a: 2, e: 1, s: 1, r: 1)</li>
+          <div><span>For word = "AAbaBa", returns:</span></div> 
+          <li>(a: 4, b: 2)</li> 
+
+        
+    <h3></h3>
+    <div><span></span></div>
+    
+    
+    
+            <h4></h4>
+                <div><span></span></div>
+            <h4></h4>
+                <div><span></span></div> 
+            
+            <h4></h4>
+                <div><span></span></div>
+            <h4></h4>
+                <div><span></span></div> 
+    <h3></h3>
+    <div><label></label></div>
+</body>
+</html>

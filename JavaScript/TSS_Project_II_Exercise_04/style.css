@@ -1,0 +1,61 @@
+h1 { 
+    color: hsl(230, 35%, 38%);
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 4rem;
+    font-family: 'Cambria', Helvetica, monospace;
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(to right, white,  beige);
+}
+
+p {
+    color: navy;
+    line-height: .1;
+    word-spacing: 3px;
+    font-family: Tahoma, Geneva, sans-serif; 
+    font-size: .9rem;   
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    letter-spacing: 5px;
+    
+ }
+
+ h4 {
+    color: hsl(118, 85%, 31%);
+    font-family: 'Tahoma', Courier, monospace;
+    font-size: 1.2rem;
+    text-align: center;
+ }
+
+ ul {
+    color: darkgreen;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    font-size: 1.2rem;
+ } 
+
+ ol {
+    color: darkgreen;
+    font-family: 'Cambria', Tahoma, sans-serif;
+    font-size: 1.2rem;
+ } 
+
+ li {
+    color: hsla(234, 90%, 32%, 0.897);
+    font-family: 'Cambria', Tahoma, sans-serif;
+    font-size: .9rem;
+    
+ }
+
+ label {
+    color: hsl(7, 92%, 19%);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: .8rem;
+    font-weight: bold;
+ }

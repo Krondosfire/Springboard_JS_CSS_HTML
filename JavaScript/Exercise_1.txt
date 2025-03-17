@@ -1,0 +1,7 @@
+Q1:
+
+Based on the story of Julius Caesar's secret party and the Caesar Cipher, identify potential variables you would need. 
+Please ensure you use appropriate variable naming conventions in JavaScript.
+
+A1:
+eventPlace; keyCipher; classifiedfInfo; unclassifiedInfo; crashFree;

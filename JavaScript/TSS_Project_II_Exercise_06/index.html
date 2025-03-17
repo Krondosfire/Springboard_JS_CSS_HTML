@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise 6</title>
+</head>
+<body>
+    <script src="exercise06.js"></script>
+    <h1><span>Ceasar's VIP Guest Directory</span></h1>
+    <h6>As Caesar's annual party 🎉 grew in prominence, attendees included dignitaries and VIPs from various regions. 
+        To manage this extensive list and maintain the event's exclusivity, Caesar needed a more sophisticated system.
+
+        He contemplated using objects 📦 in JavaScript, as they allowed him to store detailed profiles of each guest, 
+        including their titles, regions, dietary preferences, and the gifts they'd bestowed upon him.
+        
+        However, as with any VIP list, there were occasional changes. Some dignitaries fell out of favor and had to be discreetly removed from the list.</h6>
+
+    <h3>Exercise</h3>
+        <div><span>Initial Guest Directory:</span></div>
+        <li> let const guests = {<br>
+            ANTONY: { <br>
+              title: "General",<br>
+              region: "Rome",<br>
+              dietaryPreference: "Vegetarian",<br>
+              pastGifts: ["Golden Laurel", "Chariot"]<br>
+            },<br>
+            CICERO: {<br>
+              title: "Orator",<br>
+              region: "Arpinum",<br>
+              dietaryPreference: "Omnivore",<br>
+              pastGifts: ["Scroll of Proverbs", "Quill"]<br>
+            }<br>
+          };
+          </li>
+
+    <h3>Step 1</h3>
+    <div><span> Add "BRUTUS" to the guest directory. He's a "Senator" from "Rome", prefers "Vegan" food, and in the past, he has gifted Caesar a "Silver Dagger" and a "Marble Bust".</span></div>
+        <div><li>guestList.unshift("BRUTUS");</li></div>    
+
+        
+    <h3>Step 2</h3>
+    <div><span>Update CICERO's past gifts to include a "Golden Lyre".</span></div>
+    <li>guests.CICERO.pastGifts.push("Golden Lyre");</li>
+    
+    <h3>Step 3</h3>
+    <div><span>Retrieve the region of "ANTONY".</span></div>
+    <li>const antonyRegion = guests.ANTONY.region;</li>
+
+    <h3>Step 4</h3>
+    <div><span>Due to unforeseen political events, "CICERO" needs to be discreetly removed from the guest list.</span></div>
+    <li>delete guests.CICERO;</li>
+
+    <h3>Step 5</h3>
+    <div><span>Assign ANTONY's profile to a new variable named generalProfile. Then, using this new variable, change the region of ANTONY to "Egypt".</span></div>
+    <li>const generalProfile = guests.ANTONY;</li>
+    <li>generalProfile.region = "Egypt";</li>
+
+    
+
+
+
+            <h4>Question </h4>
+            <div><span>After executing Step 5, what will be the region of ANTONY in the original guests object?</span></div>
+            <h4>Answer </h4>
+                <div><span>The region of ANTONY in the original guests object will be "Egypt".</span></div> 
+            
+            
+
+    <h3>Fun Fact</h3>
+    <div><label>The act of deleting or discreetly removing names from public records and inscriptions in ancient Rome was known as "Damnatio memoriae" 
+        (condemnation of memory). It was a form of dishonor that could be passed by the Roman Senate on traitors or those who brought discredit to Rome. 
+        Their statues might be destroyed, their names obliterated from inscriptions, and even their faces chiseled off from mosaics. 
+        In our modern times, while we simply use a delete keyword in programming, in ancient Rome, it was a much more laborious and symbolic act! 🗿🔨</label></div>
+</body>
+</html>

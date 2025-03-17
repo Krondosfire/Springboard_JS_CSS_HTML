@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>The Secret Emblem of Caesar's Invitation</title>
+</head>
+<body>
+    <script src="exercise04.js"></script>
+    <h1>The Secret Emblem of Ceasar's Invitation</h1>
+    <h3>Step 1</h3>
+    <p>Use a series of `if`, `else if`, and `else` statements to decipher the first clue.</p>
+        <ul> Depending on the value of `emblemClue1`, set the location to one of the following:
+            <li>If `emblemClue1` is "Eagle", the location starts with "Forum".</li>
+            <li>If `emblemClue1` is "Lion", the location starts with "Colosseum".</li>
+            <li>Otherwise, the location starts with "Villa".</li></ul>
+
+        
+    <h3>Step 2</h3>
+    <p>Use boolean logic to decipher the second clue.</p>
+        <ul> Depending on the value of `emblemClue2`, append a location to the location.
+            <li>If `emblemClue2` is "Laurel" AND the first location is "Forum", append " of Augustus" to the location.</li>
+            <li>If `emblemClue2` is "Grapes" OR the first location is "Villa", append " of Pompey" to the location.</li></ul>
+
+        
+    <h3>Step 3</h3>
+    <p>Use the switch statement to decipher the third clue.</p>
+
+        <ul> Depending on the value of `emblemClue3`, append a direction to the location.
+            <li>7 is "North"</li>
+            <li>3 is "South"</li>
+            <li>9 is "East"</li>
+            <li>4 is "West"</li></ul>
+
+            <h4>Question</h4>
+            <p>Why is it important to be careful when using == (double equals) instead of === (triple equals) in our conditionals?</p>
+            <h4>Answer</h4>
+            <ol>It's important to be careful when using == (double equals) instead of === (triple equals) in JavaScript conditionals for several reasons:
+                <li><label>Type coercion:</label> The == operator performs type coercion, which can lead to unexpected results. It automatically converts the operands to the same type before comparison, potentially masking code-related errors.</li>
+                <li><label>Unexpected equality:</label> Due to type coercion, values that seem different may be considered equal. For example, 0 == false and " " == false both evaluate to true, which might not be the intended behavior of the implemented logic.</li>
+                <li><label>Reduced code clarity:</label> Using == can make the code less explicit about the intentions, as it's unclear whether it is meant to compare values regardless of type or if it assumed the types were the same.</li>
+                <li><label>Potential bugs:</label> The implicit type conversion of == can introduce subtle bugs that are difficult to detect and debug, especially in larger codebases.</li>
+                <li><label>Performance considerations:</label> While minor, the type coercion performed by == requires additional computational steps compared to the strict equality check of ===, potentially impacting performance in performance-critical sections of code.</li>
+                <li><label>Best practice:</label> Using === is generally considered a best practice in JavaScript development. The code looks more predictable and less prone to errors caused by unexpected type conversions.</li></ol>
+                <p>For these reasons, using === (triple equals) by default is often recommended unless there is a specific need for type coercion in the comparison.</p> 
+            
+
+    <h3>Fun Fact</h3>
+    <div><label>In ancient Rome, the use of cryptography wasn't just limited to Julius Caesar. The Romans were known to use other simple substitution ciphers and codes, especially 
+        in the military. One popular method was the "Scytale" where a strip of leather or parchment was wound around a rod of a specific diameter, and then a message was 
+        written down the rod's length. When unwound, the message appeared as a jumbled set of characters, but when wound around a rod of the correct diameter, the original 
+        message would appear. This early form of transposition cipher showcases how creative the ancient civilizations were when it came to keeping their secrets safe!</label></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise 8</title>
+</head>
+<body>
+    <script src="exercise08.js"></script>
+    <h1><span>Caesar's Cipher Reloaded</span></h1>
+    <h6>In ancient Rome 🏛️, Julius Caesar was impressed by the effectiveness of his cipher. But as the secret parties grew more popular 🎉, 
+        manually shifting each letter became tedious. It was time for automation! Caesar summoned his best scribes and mathematicians 📜 
+        to design a system - a system that could encrypt and decrypt messages at will!</h6>
+
+    <h3>Exercise</h3>
+        <div><span>It is given the following code:</span></div>
+        <li> const friend = "BRUTUS";<br>
+             const shiftValue = 3;<br>
+             const alphabet = "abcdefghijklmnopqrstuvwxyz";<br>
+          </li>
+          <div><span>Incorporate the following steps into a single JavaScript file, placing the provided code at the top. 
+            Insert your answers to the questions as comments where they appear.</span></div>
+    <h3>Step 1</h3>
+    <div><span> Create a function named encryptLetter that takes a letter and a shift value as parameters. This function should return the encrypted version of the letter.</span></div>
+        <div><li>function encryptLetter (letter, shift)<br>
+            {<br>
+              const index = alphabet.indexOf(letter.toLowerCase());<br>
+              const newIndex = (index + shift) % alphabet.length;<br>
+              return alphabet[newIndex];<br>
+            }</li></div>    
+
+        
+    <h3>Step 2</h3>
+    <div><span>Create a function named encryptMessage that takes a word and a shift value as parameters. This function should return the encrypted version of the entire word.</span></div>
+    <li>function encryptMessage (word, shift)<br>
+        {<br>
+          let encryptedMessage = "";<br>
+          for (let i = 0; i < word.length; i++)<br>
+          {<br>
+            encryptedMessage += encryptLetter(word[i], shift);<br>
+          }<br>
+          return encryptedMessage;<br>
+        }<br>
+        </li>
+    
+        <h3>Step 3</h3>
+        <div><span>Create a function named decryptLetter that takes an encrypted letter and a shift value as parameters. This function should return the decrypted version of the letter.</span></div>
+        <li>function decryptLetter (letter, shift)<br>
+            {<br>
+              const index = alphabet.indexOf(letter.toLowerCase());<br>
+              const newIndex = (index - shift + alphabet.length) % alphabet.length;<br>
+              return alphabet[newIndex];<br>
+            }<br>
+            </li>
+
+        <h3>Step 4</h3>
+            <div><span>Create a function named decryptMessage that takes an encrypted word and a shift value as parameters. This function should return the decrypted version of the entire word.</span></div>
+            <li>function decryptMessage (word, shift)<br>
+                {<br>
+                  let decryptedMessage = "";<br>
+                  for (let i = 0; i < word.length; i++)<br>
+                  {<br>
+                    decryptedMessage += decryptLetter(word[i], shift);<br>
+                  }<br>
+                  return decryptedMessage;<br>
+                }<br>
+                </li>
+            <h4>Question</h4>
+                <div><span>If Caesar encrypts the word "BRUTUS" using our encryptMessage function and then decrypts the result using our decryptMessage function, will he get "BRUTUS" back?
+                     Why or why not?</span></div>
+            <h4>Answer</h4>
+                <div><span>Yes, Caesar will get "BRUTUS" back. The decryption function is the inverse of the encryption function. 
+                    When applied sequentially, they cancel each other out, restoring the original message.</span></div> 
+            
+            <h4></h4>
+                <div><span></span></div>
+            <h4></h4>
+                <div><span></span></div> 
+    <h3>Fun Fact</h3>
+    <div><label>While the Caesar Cipher was groundbreaking in its time, today's encryption standards are far more sophisticated. 
+        One would need more than a simple shift in the alphabet to decode modern encrypted communications. 
+        In fact, modern encryption algorithms, when used correctly, can take billions of years to crack, even with today's most advanced computers!</label></div>
+</body>
+</html>

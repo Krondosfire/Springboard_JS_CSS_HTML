@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise 5</title>
+</head>
+<body>
+    <script src="exercise05.js"></script>
+    <h1>Ceasar's Party Guest List</h1>
+    <h6>Following the success of his secret party, Julius Caesar decided to make it an annual event 🎉. 
+        Every year, a grand party would be held in a mysterious location, and Caesar needed to keep track of his guests 🤔.
+        This year, he wanted to use the Caesar Cipher again 🔐, but he had so many guests that he decided to use arrays to keep everything organized 📦. 
+        His scribe provided him with a list of names 📜, but Caesar realized he could use some of the array methods he had been studying to ensure the list was perfect 🧐.</h6>
+
+    <h3>Step 1</h3>
+    <p>Caesar remembers he forgot to add his best friend "BRUTUS" to the list. Add him to the beginning of the list.</p>
+        <li>guestList.unshift("BRUTUS");</li>
+
+        
+    <h3>Step 2</h3>
+    <p>A herald announced the arrival of "AUGUSTUS" and "LUCIA". Add them to the end of the guest list.</p>
+    <li>guestList.push("AUGUSTUS", "LUCIA");</li>
+    
+    <h3>Step 3</h3>
+    <p>Caesar is curious. He wants to know if "SPARTACUS" has been invited. Check if he's on the list and find out at which position.</p>
+    <li>const spartacusIndex = guestList.indexOf("SPARTACUS");</li>
+
+    <h3>Step 4</h3>
+    <p>Oops! Caesar just received a message that "CASSIUS" won't be able to make it. Remove him from the list.</p>
+    <li>guestList.splice(guestList.indexOf("CASSIUS"), 1);</li>
+
+    <h3>Step 5</h3>
+    <p>Caesar wants to send a special invite to the first three guests on the list. Extract these names into a new array.</p>
+    <li>guestList.slice(0, 3);</li>
+
+    <h3>Step 6</h3>
+    <p>Caesar decides he wants the guest list in alphabetical order. Sort the array. However, Caesar wants his most honored guest (the one added first) to remain at the top of the list.</p>
+    <li>const honoredGuests = guestList.slice(0, 1);</li>
+    <li>const otherGuests = guestList.slice(1);</li>
+    <li>otherGuests.sort();</li>
+    <li>const sortedGuestList = honoredGuests.concat(otherGuests);</li>
+
+
+
+            <h4>Question 1</h4>
+            <p>How can you verify that "BRUTUS" was added to the beginning of the array?</p>
+            <h4>Answer 1</h4>
+                <p>Check the first element of the guests array using guests[0].</p> 
+            
+            <h4>Question 2</h4>
+            <p>What would the value of spartacusIndex be if "SPARTACUS" wasn't invited?</p>
+            <h4>Answer 2</h4>
+                <p>If "SPARTACUS" wasn't invited, the indexOf method would return -1.</p> 
+
+    <h3>Fun Fact</h3>
+    <div><label>While we use digital tools and programming languages like JavaScript today to manage and manipulate lists, ancient Romans used wax tablets and styluses for lists,
+         note-taking, and other everyday writing tasks. These tablets consisted of a wooden frame filled with wax. Users would write on the wax surface and could easily "erase" 
+         by smoothing out the wax. Imagine Caesar managing his guest list on one of those!</label></div>
+</body>
+</html>

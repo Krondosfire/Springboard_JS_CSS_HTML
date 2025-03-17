@@ -1,0 +1,57 @@
+h1 { 
+    color: hsl(230, 35%, 38%);
+    text-align: center;
+    letter-spacing: 10px;
+    font-family: 'Cambria', Helvetica, monospace;
+    text-align: center;
+    font-size: 3em;
+    transition: all 1s;
+}
+
+.large {
+   transform: scale(2);
+   color: teal;
+}
+
+.small {
+   transform: scale(0.5);
+   color: peru;
+}
+
+
+.agenda {
+   color: navy;
+   
+   font-size: 20px;
+}
+
+.agenda:hover {
+   background-color: lightskyblue;
+   transition: 200ms;
+}
+
+.completed {
+   color: olive;
+   text-decoration: line-through;
+}
+
+
+.test {
+   color: red;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

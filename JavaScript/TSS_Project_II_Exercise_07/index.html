@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise 7</title>
+</head>
+<body>
+    <script src="exercise07.js"></script>
+    <h1><span>Meeting Again with Caesar's Best Friend</span></h1>
+    <h6>In the heart of ancient Rome 🏛️, Julius Caesar had a secret 🤫. Not just about gladiators 🗡️ or gold 💰, but about... a party 🍾! This year, he would host a secret party only for his closest friends. This party was the talk of the town 🙊! There were magical fairies ✨, dancing peacocks 🦚, melodious harps 🎵, and sparkling fountains ⛲.
+
+        However, there was a problem 😲! Uninvited guests 🥷 would crash the party because the location 🗺️ would get leaked by spies 🕵️‍♂️.
+        
+        Caesar needed a plan 💡! He thought, "I'll send out the invites encrypted 🔐. That way, only my true friends 🤝 will know when and where the party is!".
+        
+        So, he came up with a cunning plan 🦊. Instead of writing the party location of the invitation directly 🏞️, he would shift each letter in by a fixed number 🔢. So, for example, if he decided to shift by 3:
+        
+        - A would become D 🔄
+        - B would become E 🔄
+        - C would become F 🔄
+        - ... and so on.
+        
+        If the invite said "GARDEN" 🌳, he would write "JDUGHQ" 🤯.
+        
+        When Brutus received the letter 📜, he knew about this secret code 🗝️. He would shift the letters back by the same number and decode "JDUGHQ" to "GARDEN" 🌳. Mmm, clever 🧠!
+        
+        However, any nosy Romans 👀 intercepting the message would be baffled 😶‍🌫️! "JDUGHQ? What kind of place is that?" they would wonder 🤷‍♂️.
+        
+        Thanks to the "Caesar Cipher" 🔐, Caesar's secret party remained exclusive 😼, magical 🌌, and crasher-free 🥳!
+        
+        And while history 📖 might tell you that Brutus wasn't the most trustworthy of friends, at least in our story, he kept the party's secret 🎉 and never gave away the magical location 🌳! 😉🤫</h6>
+
+    <h3>Exercise</h3>
+        <div><span>It is given the following code:</span></div>
+        <li> const friend = "BRUTUS";<br>
+             const shiftValue = 3;
+          </li>
+          <div><span>The objective is to encrypt the name "BRUTUS" using the Caesar Cipher technique and loops. Remember, we did it once for "B". Now, it's time to apply all letters.
+
+            Use the following steps in a JavaScript file, placing the given code at the top. </span></div>
+    <h3>Step 1</h3>
+    <div><span> Recall the Latin alphabet variable from the previous exercise.</span></div>
+        <div><li>const alphabet = "abcdefghijklmnopqrstuvwxyz";</li></div>    
+
+        
+    <h3>Step 2</h3>
+    <div><span>Use a loop to iterate through each letter of "BRUTUS". Employ the Caesar Cipher technique to shift each letter by the given value. Store the encrypted name in a variable.</span></div>
+    <li>let encryptedName = "";<br>
+
+        for (let a = 0; a < friend.length; a++) { <br>
+          const currentLetter = friend[a];<br>
+          const currentIndex = alphabet.indexOf(currentLetter.toLowerCase());<br>
+          const newIndex = (currentIndex + shiftValue) % alphabet.length;<br>
+          encryptedName += alphabet[newIndex].toUpperCase();
+        }</li>
+    
+    
+            <h4>Question 1</h4>
+                <div><span>What advantage does using a loop provide over manually encrypting each letter?</span></div>
+            <h4>Answer 1</h4>
+                <div><span>A loop can process large amounts of data quickly, encrypting multiple characters in succession without the need for manual intervention.
+                    Loops can handle varying input sizes, from short strings to large documents, without requiring changes to the encryption. 
+                    Loops allow for more concise and readable code compared to manually writing out the encryption process for each character.
+                    Manual encryption of individual letters is prone to human error, while a well-designed loop reduces this risk.
+                    If changes to the encryption algorithm are needed, they can be implemented once within the loop rather than updating multiple instances of manual encryption</span></div> 
+            
+            <h4>Question 2</h4>
+                <div><span>Explain the role of % alphabet.length in our loop. How does it aid in the encryption process?</span></div>
+            <h4>Answer 2</h4>
+                <div><span>The modulus operation ensures that the new index wraps around the alphabet when it exceeds the alphabet's length. 
+                    This creates the circular nature of the Caesar cipher, where 'Z' shifted forward becomes 'A'.
+                    It keeps the new index within the bounds of the alphabet array, preventing out-of-range errors. 
+                    If the sum of currentIndex and shiftValue exceeds the alphabet length, the modulus operation brings it back to a valid index.
+                    By using modulus arithmetic, the same operation can be used for both encryption and decryption, just with different shift values.
+                    It provides a computationally efficient way to handle the wraparound without using conditional statements or more complex logic</span></div> 
+    <h3>Fun Fact</h3>
+    <div><label>Did you know? Ancient Romans employed various means to send confidential messages, one of which was the "tessera." 
+        A tessera was a token, usually made of metal or stone, given to someone as a sign of recognition. This token could be presented 
+        to gain entry into secret meetings or events. It's fascinating to think that they had their own version of "password-protected entry" 
+        over two millennia ago! 🏛️🔐🎟️</label></div>
+</body>
+</html>
