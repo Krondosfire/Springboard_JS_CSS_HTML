@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Local Storage Exercise</title>
+
+		<link
+				rel="stylesheet"
+				href="style.css"
+		>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<h1>Local Storage Exercise</h1>
+		<p>
+			Use the form below to set a new color for the notes. The color can be
+			any valid CSS color value (e.g., "black", "rgb(0, 0, 0)", "#000000").
+			When you click the "New Note" button, a new note will be created with
+			the specified color. The notes will be stored in local storage, so
+			they will persist even if you refresh the page.
+		</p>
+		<form id="color-form">
+			<label for="color-input">Note Color:</label>
+			<input
+					type="text"
+					id="color-input"
+					placeholder="black, rgb(0, 0, 0), #000000"
+			>
+
+			<button type="submit">Set as New Color</button>
+		</form>
+
+		<button id="new-note-button">New Note</button>
+
+		<div id="note-container">
+			<!-- You'll create the notes here. -->
+		</div>
+	</body>
+</html>

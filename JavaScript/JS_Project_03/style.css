@@ -1,0 +1,113 @@
+body {
+   font-family: Arial, sans-serif;
+   background-color:blanchedalmond;
+   margin: 0;
+   padding: 20px;
+}
+
+.container {
+   max-width: 1000px;
+   margin: 0 auto;
+   background-color: beige;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+   text-align: center;
+   color: #333;
+   font-family: Cambria, sans-serif;
+   font-size: 4.5em;
+}
+
+h3 {
+   text-align: center;
+   color: darkgreen;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form {
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+
+input, button {
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid teal;
+   border-radius: 4px;
+}
+
+input[type="text"] {
+   flex: 1;
+   margin-right: 10px;
+}
+
+
+button {
+   align-self: end; 
+   background-color: navy;
+   color: white;
+   border: none;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+button:hover {
+   background-color: cadetblue;
+}
+
+.meme {
+   position: relative;
+   margin-bottom: 20px;
+}
+
+.meme img {
+   width: 100%;
+   display: block;
+}
+
+.meme-text {
+   position: absolute;
+   left: 0;
+   right: 0;
+   padding: 10px;
+   font-size: 44px;
+   font-weight: bold;
+   text-align: center;
+   text-transform: uppercase;
+   color: white;
+   text-shadow: 2px 2px 0 #000;
+}
+
+.top-text {
+   top: 10px;
+}
+
+.bottom-text {
+   bottom: 10px;
+   color: greenyellow;
+}
+
+.delete-btn {
+   position: absolute;
+   top: 5px;
+   right: 5px;
+   background-color: #ff4444;
+   color: white;
+   border: none;
+   padding: 5px 10px;
+   cursor: pointer;
+   font-size: 14px;
+   border-radius: 3px;
+}
+label {
+   font-size: 18px;
+   color:darkred;
+   margin-bottom: 5px;
+   font-family: Cambria, sans-serif;
+}

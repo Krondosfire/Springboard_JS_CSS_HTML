@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Events Exercise Solution</title>
+
+		<link
+				rel="stylesheet"
+				href="style.css"
+		>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<h1>Events Exercise</h1>
+		<div><p>In this exercise:
+
+			- The user should be able to set a color for boxes (this affects both current boxes and new boxes).
+			- The user should be able to add boxes with the set color to the div with the ID `box-container`:
+				- When the button with the ID `new-box-button` is clicked.
+				- When the `N` key is pressed.
+			- The user should be able to remove a box when the box is double-clicked on.
+			- Each box should display its ID.
+			- Each box should display its page coordinates when hovered (when the mouse leaves, it displays its ID back).
+			- Each box should have a class `box` for styling and selecting.
+			
+			We coded the `index.html` and `style.css` files in the starter code for you. Before you start coding the `script.js` file, please review the `index.html` file.
+			
+			After you try on your own, please see the steps if you need guidance on the steps you should follow.</p></div>
+		<form id="color-form">
+			<label for="color-input">Box Color:</label>
+			<input
+					type="text"
+					id="color-input"
+					placeholder="black, rgb(0, 0, 0), #000000"
+			>
+
+			<button type="submit">Set as New Color</button>
+		</form>
+
+		<button id="new-box-button">New Box</button>
+
+		<div id="box-container">
+			<!-- You'll create the boxes here. -->
+		</div>
+	</body>
+</html>
