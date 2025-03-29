@@ -138,3 +138,86 @@ try {
 }
 console.log(`OUTSIDE TRY & FINALLY`);
 
+// console.log(`IAM BEFORE THE ERROR!`);
+// throw "I AM THE ERROR!"; // This will throw an error and stop the execution of the code
+// console.log(`IAM AFTER THE ERROR!`);
+// // This line of code will not execute because the error was thrown above and not caught.
+
+
+try {
+    throw "I AM THE ERROR!"; // This will throw an error and stop the execution of the code
+} catch (error) {
+    console.log(`Caught an error: ${error}`); // This will catch the error and log it to the console
+}
+console.log(`IAM AFTER THE ERROR!`);
+// This line of code will still execute because the error was caught in the catch block above.
+// The code continues to run as expected after the error was caught.
+
+console.log(`Throw an Error Object`);
+
+try {
+    throw new Error("I AM AN ERROR OBJECT!"); // This will throw an error object and stop the execution of the code
+} catch (error) {
+    console.log(`Caught an error: ${error.message}`); // This will catch the error object and log its message to the console
+    console.dir(error); // This will log the entire error object to the console, providing more information about the error
+    console.log(`What kind of error?: ${error.name}`); // This will log the name of the error to the console (e.g. "Error")
+    console.log(`What is the message?: ${error.message}`); // This will log the message of the error to the console (e.g. "I AM AN ERROR OBJECT!")
+    console.log(`Where did it happen?: ${error.stack}`); // This will log the stack trace of the error to the console, showing where the error occurred in the code
+
+}
+
+
+try {
+    throw new TypeError("Sucks! Another Error!"); // This will throw an error object and stop the execution of the code
+} catch (error) {
+    console.log(`Caught an error: ${error.message}`); // This will catch the error object and log its message to the console
+    console.dir(error); // This will log the entire error object to the console, providing more information about the error
+    console.log(`What kind of error?: ${error.name}`); // This will log the name of the error to the console (e.g. "Error")
+    console.log(`What is the message?: ${error.message}`); // This will log the message of the error to the console (e.g. "I AM AN ERROR OBJECT!")
+    console.log(`Where did it happen?: ${error.stack}`); // This will log the stack trace of the error to the console, showing where the error occurred in the code
+
+}
+
+function UserExeption(message) {
+    this.message = message; // Set the message property of the error object to the provided message
+    this.name = "UserExeption"; // Set the name property of the error object to "UserExeption"
+
+}
+
+function getMonthName(mo) {
+    if(typeof mo !== 'number') { // Check if the input is not a number
+        throw new UserExeption(`Invalid Input: ${mo}. Please provide a valid month number.`); // If not, throw a custom error object with a message
+    }
+    mo = mo - 1; // Adjust the month number to be zero-based (e.g. January is 0, February is 1, etc.)
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; // Array of month names
+    if(months[mo] !== undefined) { // Check if the month number is valid (i.e. within the range of 0-11)
+        return months[mo]; // If valid, return the corresponding month name from the array
+    } else { // If the month number is not valid (e.g. less than 1 or greater than 12)
+        throw new UserExeption(`Invalid Month Number: ${mo + 1}. Please provide a number between 1 and 12.`); // If not, throw a custom error object with a message
+    }
+}
+getMonthName(10); // This will return "October" because 10 corresponds to October (0-based index)
+console.log(getMonthName(10)); // This will log "October" to the console because 10 corresponds to October (0-based index)
+
+try {
+    const myMonth = 15; // Set the month number to 15 (which is invalid)
+    const monthName = getMonthName(myMonth); // Call the getMonthName function with the invalid month number
+} catch (error) { // Catch any errors that were thrown in the try block
+    monthName = "Unknown"; // Set the month name to "Unknown" if there was an error
+    console.error(`Caught an error: ${error.message}`); // Log the error message to the console
+} // This will log the error message to the console if there was an error in the try block
+
+console.log(`What is the purpose of debugging in computer programming?: Locating and fixing coding errors`);
+console.log(`What is a common type of error in JavaScript caused by typing something incorrect that the language does not understand?: Syntax Error`);
+console.log(`What information in an error message is particularly useful for locating errors in larger codebases?: File name and line number`);
+console.log(`What is a recommended approach for debugging when encountering silent bugs in code?:Making and testing assumptions`);
+console.log(`What is one of the main advantages of using the JavaScript Debugger tool mentioned in the video?: It allows for efficient debugging by stepping through code line by line`);
+console.log(`What is a common issue when comparing arrays and objects in JavaScript?: JavaScript compares arrays and objects based on their memory references`);
+console.log(`What is the importance of planning code before writing it, as emphasized in the video?: Planning code simplifies the coding process`);
+console.log(`What keyword in JavaScript is used for error handling to prevent the code from crashing?: try/catch`);
+console.log(`Which keyword ensures that a piece of code runs regardless of whether an error was thrown or caught?: finally`);
+console.log(`When might a developer choose to throw a custom error in JavaScript?: When they anticipate specific issues and want to provide informative feedback`);
+
+
+
+
