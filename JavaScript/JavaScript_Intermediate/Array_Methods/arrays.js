@@ -120,4 +120,151 @@ function myForEach(array, callback) {
     console.log(color.toUpperCase(), 'at index of:', i);   
 });
 
+// map() method
+console.log(`map() method`);
 
+const numbers = [23, 86, 65, 98, 125, 2, 476, 16, 3];
+const negatives = numbers.map(function(num) {
+    return num * -1;
+});
+
+numbers; // prints original array
+console.log(numbers); // prints original array
+console.log(negatives); // prints new array with negative numbers
+
+const todos = [
+    {
+        id: 1,
+        text: 'Change the oil!',
+        priority: 'High'
+    },
+    {
+        id: 2,
+        text: 'Check the tires!',
+        priority: 'Medium'
+    },
+    {
+        id: 3,
+        text: 'Replace the windshield!',
+        priority: 'Medium'
+    },
+    {
+        id: 4,
+        text: 'Change the windshield wipers!',
+        priority: 'Low'
+    },
+    {
+        id: 5,
+        text: 'Change the air filter!',
+        priority: 'Low'
+    },
+    {
+        id: 6,
+        text: 'Check the brakes!',
+        priority: 'High'
+    },
+    {
+        id: 7,
+        text: 'Troubleshoot 4WD Service Light',
+        priority: 'Medium'
+    },
+    {
+        id: 8,
+        text: 'Check the drive belt!',
+        priority: 'High'
+    },
+    {
+        id: 9,
+        text: 'Check the fluids!',
+        priority: 'Low'
+    },
+    {
+        id: 10,
+        text: 'Check the weel alignment!',
+        priority: 'Low'
+    }
+];
+
+const todoText = todos.map(function(todo) {
+     return todo.text;
+});
+
+console.log(todos); // prints original array
+console.log(todoText); // prints new array with todo text
+
+
+const links = Array.from(document.querySelectorAll('a'));
+//Array.from(links); // converts NodeList to Array
+//console.log(Array.from(links)); // prints array of links
+
+const urls = links.map(function(a) {
+    return a.href;
+});
+
+console.log(urls); // prints array of urls
+
+// writing map() method
+console.log(`Writing our own map() method`);
+
+function myMap(array, callback) {
+    const mappedArray = [];
+    for (let i = 0; i < array.length; i ++) {
+        const val = callback(array[i], i, array);
+        mappedArray.push(val);
+    }
+    return mappedArray;
+}
+
+const priorityMap = myMap(todos, function(todo) {
+    return todo.priority;
+});
+
+console.log(priorityMap); // prints array of priorities
+
+const repeatedStrings = myMap(['cat', 'Fibonachi', 'edge', 'parameter', 'solenoid', 'travel'], function(str, idx) {
+    return str.repeat(idx);
+});
+
+console.log(repeatedStrings); // prints array of repeated strings
+
+// filter() method
+console.log(`filter() method`);
+
+const words = ['immunoelectrophoretically', 'rotavator', 'crankshaft', 'psychophysicotherapeutics', 'squirrelled', 'crypt', 'uncopyrightable', 'cysts', 'pseudopseudohypoparathyroidism', 'unimaginatively'];
+
+const longWords = words.filter(function(word) {
+    // if (word.length >=20) {
+    //     return true;
+    // }
+    // else {
+    //     return false;
+    // }
+    return word.length >= 20; // returns true or false
+});
+console.log(words); // prints original array
+console.log(longWords); // prints array of long words
+
+const xWords = words.filter(function(w) {
+    return w[0] === 'u' || w[0] === 'c';
+});
+
+console.log(xWords); // prints array of words that start with u or c
+
+const isVowel = function(char) {
+    return 'aeiou'.indexOf(char) !== -1;
+};
+
+const containsVowel = function(word) {
+    for (let char of word) {
+        if(isVowel(char)) return true;
+    }
+    return false;
+};
+
+const haveVowels = words.filter(containsVowel); // returns words that contain vowels
+const noVowels = words.filter(function(word) {
+    return !containsVowel(word); // returns words that do not contain vowels
+});
+
+console.log(haveVowels); // prints array of words that contain vowels
+console.log(noVowels); // prints array of words that do not contain vowels
