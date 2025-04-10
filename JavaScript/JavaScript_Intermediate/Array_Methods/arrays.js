@@ -268,3 +268,28 @@ const noVowels = words.filter(function(word) {
 
 console.log(haveVowels); // prints array of words that contain vowels
 console.log(noVowels); // prints array of words that do not contain vowels
+// Create own filter()
+console.log(`Create own filter()`);
+
+
+function myFilter(array, callback) {
+    const filteredArray = [];
+    for(let i = 0; i < array.length; i ++) {
+        if(callback(array[i], i, array)) {
+            filteredArray.push(array[i]);
+        }
+     }
+        return filteredArray;
+}
+
+const shorWord = myFilter(words, function(word) {
+    return word.length <= 6;
+});
+
+console.log(shorWord); // prints array of short words
+
+const everyOtherWord = myFilter(words, function(word, i) {
+    return i % 2 === 0; // returns every other word
+});
+
+console.log(everyOtherWord); // prints array of every other word
