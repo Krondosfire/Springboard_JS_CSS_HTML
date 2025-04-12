@@ -90,3 +90,8 @@ console.log(`What is the main purpose of the find method when applied to an arra
 console.log(`What does the findIndex method return when applied to an array?: It returns the index of the first matching element based on a provided callback function.`);
 console.log(`How does the custom implementation of the filter method differ from the built-in filter method?: The custom method mutates the original array, while the built-in method creates a new array.`);
 
+console.log(`What is the primary focus of ES2015 as mentioned in the video?: Making developers' lives easier`);
+console.log(`What is ECMAScript?: Making developers' lives easier`);
+console.log(`Who proposed the standardization of ECMAScript during the browser wars?: Netscape`);
+console.log(`What role does ECMA International play in the development of ECMAScript?: Writing specifications for information systems`);
+console.log(`How do browsers typically implement new ECMAScript features?: By adhering to the rules specified in ECMAScript documents`);

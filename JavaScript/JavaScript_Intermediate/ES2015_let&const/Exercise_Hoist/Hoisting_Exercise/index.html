@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting Exercise</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Hoisting Exercise</h1>
+    
+    <p>In this exercise, you will practice <o class="class">hoisting</o>.</p>
+
+    <p>As a developer 🧑‍💻 at the Time Travel Agency 🌀, your task is to organize travel plans for adventurous time travelers. 
+        You'll use <o class='class'>var</o>, <o class='class'>let</o>, <o class='class'>const</o>, and demonstrate <o class='class'>variable hoisting</o> to manage travel details.</p>
+
+        <ul> The tasks: 
+            <li><b>Declare a Destination Variable:</b> Use <o class='class'>let</o> method to declare a variable named <o class='class'>destination</o> and assign it the value <o class='class'>"Ancient Egypt"</o> Print the destination to console.</li>
+            <li><b>Change the Destination:</b>Now, change the <o class='class'>destination</o> variable to <o class='class'>"Medieval Europe"</o>. Print the new destination to the console.</li>
+            <li><b>Declare a Constant Travel Date:</b> Use <o class='class'>const</o> to declare a variable named <o class='class'>travelDate</o> and set it to <o class='class'>"2014-03-15"</o>. 
+                Try to change the <o class='class'>travelDate</o> to another value and observe and explain what happens as a comment.</li>
+            <li><b>Experiment with Variable Hoisting:</b> Before declaring any variable, try to print a variable named <o class='class'>timeMachineModel</o> to the console.
+            Then, declare <o class='class'>timeMachineModel</o> using <o class='class'>var</o> and assign it the value <o class='class'>"T-800"</o>. Observe and explain what happens as a comment.</li>
+        </ul>
+        
+
+    <h2>Step-by-step</h2>
+    <h3><o class='class'>var</o>, <o class='class'>let</o>, <o class='class'>const</o></h3>
+    <ul> Task 1 & Task 2:
+        <li>The variables <o class='class'>destination01</o> and <o class='class'>destination02</o> were being assigned the result of console.log(), which returns <b><i>undefined</i></b>. Instead, these variables should store the formatted string directly</li>
+        <li>Changed <o class='class'>let</o> to <o const='class'>const</o> for these variables since their values do not need to change.</li>
+        <li>Print the result in console.</li>
+    </ul>
+    <ul>Task 3:
+        <li>The declaration of <o class='class'>travelDate</o> as a constant is correct.</li>
+        <li>Print the result in the console</li>
+    </ul>
+    <ul>Task 4:
+        <li>Declare the variable <o class='class'>timeMachineModel</o> as <b><i>undefined</i></b></li>
+        <li>Print the result in the console</li>
+        <li>Assigned a value <o class='class'>"T-800"</o> to <o class='class'>timeMachineModel</o> variable.</li>
+        <li>Print the result in the console.</li>
+    </ul>
+
+    <h3>Append the output to the HTML element</h3>
+    <ul><li>First Destination:</li>
+        <li><b><i><div id="output_01"></div></i></b></li>
+        <li>The New Destination:</li>
+        <li><b><i><div id="output_02"></div></i></b></li>
+        <li>Travel Date:</li>
+        <li><b><i><div id="output_03"></div></li></b>
+        <li>Time Machine Model:</li>
+        <li><b><i><div id="output_04"></div></i></b></li>
+        <li>Time Machine Model:</li>
+        <li><b><i><div id="output_05"></div></i></b></li></ul>
+
+    <h4>References:</h4>
+    <ol>
+        <li><a href='https://blog.alexdevero.com/good-javascript-variables/'>7 Practices to Create Good JavaScript Variables</a></li>
+        <li><a href='https://www.digitalocean.com/community/tutorials/understanding-hoisting-in-javascript'>Understanding Hoisting in JavaScript</a></li>
+        <li><a href='https://www.w3schools.com/js/js_hoisting.asp'>JavaScript Hoisting</a></li>
+        <li><a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">HTML DOM Element appendChild()</a></li>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML'>Element: insertAdjacentHTML() method</a></li>
+        <li><a href='https://www.tutorialspoint.com/how-to-append-data-to-div-element-using-javascript'>Append Data to Div Element Using JavaScript - Tutorialspoint</a></li>
+    </ol>
+
+<script src="hoist.js"></script>   
+</body>
+</html>
