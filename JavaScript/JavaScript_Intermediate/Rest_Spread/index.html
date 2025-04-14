@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest/spread operator</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>rest/spread operator</h1>
+    
+    <p>...</p>
+        <ul>Properties of rest/spread operator:
+            <li>They are both the same operator and use three dots (...).</li>
+            <li>When the three dots are part of a function definition, we call the operator the 'rest' operator</li>
+            <li>The rest operator is the last parameter defined in a function and will evaluate to anarray of all additional arguments passed in.<br>
+                <b>function</b> displayArguments(...restOfArgs) { <br>
+                    console.log("The first argument is", restOfArgs[0]);<br>
+                    return 'You passed in ${restOfArgs.length} arguments'; <br>
+                    }; <br>
+               
+                displayArguments(1, 2, 3); // "The first argument is 1"<br>
+            </li>
+            
+        </ul>
+        
+        <ul>Collecting Remaining Arguments:
+            <li>You can also specify several named parameters and collect the rest:<br>
+                    <b>function</b> oneOrMoreArguments(first, ...more) { <br>
+                        console.log(first);<br>
+                        <br>
+                        more.forEach(arg => {<br>
+                            console.log(arg);<br>
+                        });<br>
+                    };<br>
+            </li>
+            <li>Must put parentheses around parameters if there are 0 or 2+ parameters.</li>
+            <li>Return statement is implied if you leave out curly braces.</li>
+            <li>They don't make their own <b><i>this</i></b>.</li>
+        </ul>
+                
+
+<script src="rest.js"></script>   
+</body>
+</html>

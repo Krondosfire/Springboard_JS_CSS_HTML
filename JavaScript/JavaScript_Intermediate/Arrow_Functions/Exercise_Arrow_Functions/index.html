@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions Exercise - Spacecraft</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Arrow Functions Exercise</h1>
+    
+    <p>In this exercise, you will practice <o class="class">arrow functions</o>.</p>
+
+    <p>As a lead engineer 🧑‍💻 in the Galactic Exploration Team 🌌, your task is to program your spacecraft for various tasks using arrow functions: usage with no parameters, implicit return, implicit return with objects, 
+        and<o class='class'>this</o> in arrow functions.</p>
+
+        <ul> The tasks: 
+            <li><b>No Parameters: Activate Hyperdrive:</b> Write an arrow function named <o class='class'>activateHyperdrive</o> with no parameters that print <o class='class'>"Hyperdrive activated!""</o> to the console. Call <o class='class'>activateHyperdrive</o> To test it.</li>
+            <li><b>Implicit Return: Scan for Lifeforms:</b>Create an arrow function named <o class='class'>scanForLife</o> that implicitly returns <o class='class'>"No Lifeforms detected"</o> without using curly braces. Print the result to the console.</li>
+            <li><b>Implicit Return with Objects: Log Coordinates:</b> Write an arrow function named  <o class='class'>currentCoordinates</o> that returns an object with properties <o class='class'>RA</o> (Right Ascention), <o class='class'>Dec</o> (Declination), and <o class='class'>Dist</o> (Distance from Earth), representing coordinates in space. 
+                Use implicit return. Print the returned object from <o class='class'>currentCoordinates</o>.</li>
+            <li><b>Understanding <o class='class'>this</o>: Message from Home Base:</b> Inside an object named <o class='class'>spacecraft</o> create a method named <o class="class">receiveMessage</o> using arrow function syntax.
+                This method should log <o class='class'>"Message received: "</o> followed by a message it receives as a parameter. Directly callg <o class='class'>receiveMessage</o> within <o class='class'>spacecraft</o> and observe. 
+                Observe and explain the behavior of <o class="class">this</o> in this context as a comment.</li>
+        </ul>
+        
+
+    <h2>Step-by-step</h2>
+    
+    <ul> Task 1:
+        <li>Create a helper function <o class='class'>displayOutput</o> that creates a new <o class='class'>< div ></o> element, sets its <o class='class'>textContent</o> to the message passed as an argument,
+            and appends it to a container <o class='class'>< div ></o> with <o class='class'>id="output"</o>.</li>
+        </ul>
+
+    <ul>Task 2:
+        <li>Declare a new variable that represent the status of the hyperdrive and set it to <o class='class'>"inactive'</o></li>
+        <li>Create an arrow function with no parameters that updates the status of the hyperdrive to <o class='class'>"active"</o>.</li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+    <ul>Task 3:
+        <li>Create an arrow function that simulates a scanning process <o class='class'>"Scanning for lifeforms..."</o> and returns <o class='class'>"No lifeforms detected"</o></li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <ul>Task 4:
+        <li>Create an arrow function that implicit returns coordinates as an object object with properties <o class='class'>RA</o>, <o class='class'>Dec</o>, and <o class='class'>Dist</o>, representing coordinates in space.</li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <ul>Task 5:
+        <li>Create a regular function instead of an arrow function for correct use of <o class='class'>'this'</o>, otherwise an arrow function will just ignore <o class='class'>'this'</o>, and will not print the name of the spacecraft</li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <h3>Append the output to the HTML element</h3>
+    <section id="console"><div class="agenda">Spacecraft Status Screen:</div>
+        <div id="output"></div>
+   </section>   
+
+    <h4>References:</h4>
+    <ol>
+        <li><a href='https://www.freecodecamp.org/news/javascript-arrow-functions-in-depth/'>How to Use JavaScript Arrow Functions – Explained in Detail</a></li>
+        <li><a href='https://javascript.info/arrow-functions-basics'>Arrow functions, the basics</a></li>
+        <li><a href='https://www.learn-js.org/en/Arrow_Functions'>Arrow Functions</a></li>
+        <li><a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">HTML DOM Element appendChild()</a></li>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML'>Element: insertAdjacentHTML() method</a></li>
+        <li><a href='https://www.tutorialspoint.com/how-to-append-data-to-div-element-using-javascript'>Append Data to Div Element Using JavaScript - Tutorialspoint</a></li>
+    </ol>
+
+<script src="spacecraft.js"></script>   
+</body>
+</html>
