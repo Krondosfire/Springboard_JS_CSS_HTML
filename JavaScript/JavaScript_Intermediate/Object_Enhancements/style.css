@@ -19,7 +19,7 @@ h1 {
 
 
 .agenda {
-   color: lightsalmon;
+   color: navy;
    
    font-size: 20px;
 }
@@ -42,8 +42,7 @@ h1 {
 
 .class {
    color: darkred;
-   background-color: lightgray;
-   font-size: 20x;
+   font-size: 25px;
 }
 
 .class:hover {
@@ -60,10 +59,6 @@ h3 {
    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-h4 {
-   color: darkgreen;
-   font-family: 'Courier New', Courier, monospace;
-}
 
 ul {
    list-style-type: square;
@@ -81,39 +76,6 @@ ul {
    width: 65%;
 }
 
-ol {
-   list-style-type:decimal;
-   color: navy;
-   font-size: 15px;
-   text-align: justify;
-   text-decoration:none;
-   offset-distance: 10px;
-   margin: 20px;
-   padding: 20px;
-   border: 2px solid black;
-   border-radius: 10px;
-   background-color: thistle;
-   box-shadow: 5px 5px 10px gray;
-   transition: all 0.5s;
-   width: 35%;
-}
-
-#console {
-   color: yellowgreen;
-   background-color: black;
-   font-family: 'Courier New', Courier, monospace;
-   margin: 20px;
-   padding: 20px;
-   width: 80%;
-   border: 2px solid black;
-   border-radius: 10px;
-   box-shadow: 5px 5px 10px gray;
-   transition: all 0.5s;
-}
-
-a {
-   text-decoration: none;;
-}
 button {
    background-color: lightblue;
    color: black;
@@ -129,7 +91,19 @@ button {
    font-weight: bold;
 }
 
-
+#console {
+   color: yellowgreen;
+   background-color: black;
+   font-family: 'Courier New', Courier, monospace;
+   margin: 20px;
+   padding: 20px;
+   width: 85%;
+   border: 2px solid black;
+   border-radius: 10px;
+   box-shadow: 5px 5px 10px gray;
+   transition: all 0.5s;
+   
+}
 
 
 
