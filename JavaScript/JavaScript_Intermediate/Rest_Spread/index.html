@@ -10,35 +10,61 @@
 <body>
     <h1>rest/spread operator</h1>
     
-    <p>...</p>
-        <ul>Properties of rest/spread operator:
+    <p><b><o class='class'>arguments</o></b> is not an actual array, it is an "array-like-object". It has a length property and can be accessed at a specific index, 
+        but does not have build in array methods like map, filter, etc.</p>
+        
+    <ul>Properties of rest/spread operator:
             <li>They are both the same operator and use three dots (...).</li>
             <li>When the three dots are part of a function definition, we call the operator the 'rest' operator</li>
             <li>The rest operator is the last parameter defined in a function and will evaluate to anarray of all additional arguments passed in.<br>
-                <b>function</b> displayArguments(...restOfArgs) { <br>
-                    console.log("The first argument is", restOfArgs[0]);<br>
-                    return 'You passed in ${restOfArgs.length} arguments'; <br>
+                <div id='console'><b>function</b> displayArguments(...restOfArgs) { <br>
+                    &nbsp; &nbsp;console.log("The first argument is", restOfArgs[0]);<br>
+                    &nbsp;&nbsp;&nbsp;return 'You passed in ${restOfArgs.length} arguments'; <br>
                     }; <br>
                
-                displayArguments(1, 2, 3); // "The first argument is 1"<br>
+                displayArguments(1, 2, 3); // "The first argument is 1"</div><br>
             </li>
             
         </ul>
         
         <ul>Collecting Remaining Arguments:
             <li>You can also specify several named parameters and collect the rest:<br>
-                    <b>function</b> oneOrMoreArguments(first, ...more) { <br>
-                        console.log(first);<br>
+                    <div id='console'><b>function</b> oneOrMoreArguments(first, ...more) { <br>
+                        &nbsp;  console.log(first);<br>
                         <br>
-                        more.forEach(arg => {<br>
-                            console.log(arg);<br>
-                        });<br>
-                    };<br>
+                                 &nbsp;     more.forEach(arg => {<br>
+                                    &nbsp;     console.log(arg);<br>
+                             &nbsp;   });<br>
+                    };</div><br>
             </li>
             <li>Must put parentheses around parameters if there are 0 or 2+ parameters.</li>
             <li>Return statement is implied if you leave out curly braces.</li>
             <li>They don't make their own <b><i>this</i></b>.</li>
         </ul>
+        <ul>Spread operator
+            <li>The ... syntax, in a different context, is called the spread operator. <br>
+            For example: when calling a function, you can "spreadout" array elements:<br>
+            <div id='console'><b>function</b> takesFour(one, two, three, four) { <br>
+                        &nbsp;&nbsp;console.log(one); <br>
+                        &nbsp;&nbsp;console.log(two); <br>
+                        &nbsp;&nbsp;console.log(three); <br>
+                        &nbsp;&nbsp;console.log(four); <br>
+                    
+            }<br>
+        const names = ['Mary', 'Colt', 'Angela', 'Abe']; <br>
+        takesFour(...names); <br>
+        // Mary <br>
+        // Colt <br>
+        // Angela <br>
+        // Abe</div>
+    </li>
+    <li>With rest operator we collecting values into one collection.</li>
+    <li> The spread operator does the opposite - it spreads the values across as individual arguments. </li>
+        </ul>
+
+    <ul>Spreading Objects:
+        <li>You can use the same operator to copy over pieces of an object into a new object.</li>
+    </ul>
                 
 
 <script src="rest.js"></script>   

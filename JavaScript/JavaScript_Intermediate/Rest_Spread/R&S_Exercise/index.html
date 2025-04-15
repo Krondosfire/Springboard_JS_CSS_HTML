@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest and Spread Operators Exercise - Spacecraft</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Rest & Spread Operators Exercise</h1>
+    
+    <p>In this exercise, you will practice <o class="class">rest</o> and <o class='class'>spread</o> operators.</p>
+
+    <p>As a lead engineer 🧑‍💻 in the Wildlife Oasis, you manage the sanctuary's database of endangered species using advanced JavaScript techniques.</p>
+
+        <ul> The tasks: 
+            <li><b>Track Animal Sightings:</b> Write a function with <o class='class'>rest</o> parameters to print sightings of different animals within the sanctuary. This function should accept an arbitrary number of animal names.</li>
+            <li><b>Merge Habitat Areas:</b>You are given two arrays of habitat names. Use the <o class='class'>spread</o> spread operator to combine them into a comprehensive list of protected areas within the sanctuary.</li>
+            <li><b>Update Conservation Status:</b> You are given an object representing an animal's conservation status. Use the <o class='class'>spread</o> operator to update this status with new information, such as an increase in population or a change in habitat.</li>
+            <li><b>Catalog Genetic Diversity:</b> Duplicate an animal profile object using a shallow copy. Add genetic diversity information using the <o class='class'>genetics</o> property to this copy. 
+                Observe and explain how changes to nested properties affect both the original and the copied object.</li>
+            <li><b>Analyze Ecosystem Health:</b>You are given an object with a nested structure detailing the ecosystem's health, including water quality and food supply. Perform a shallow copy and modify a nested property. 
+                Observe and explain how changes to nested properties affect both the original and the copied object.</li>
+        </ul>
+        
+
+    <h2>Step-by-step</h2>
+    
+    <ul> Task 1:
+        <li>Create a helper function <o class='class'>displayOutput</o> that creates a new <o class='class'>< div ></o> element, sets its <o class='class'>textContent</o> to the message passed as an argument,
+            and appends it to a container <o class='class'>< div ></o> with <o class='class'>id="output"</o>.</li>
+        </ul>
+
+    <ul>Task 2:
+        <li>Declare a new variable that represent the status of the hyperdrive and set it to <o class='class'>"inactive'</o></li>
+        <li>Create an arrow function with no parameters that updates the status of the hyperdrive to <o class='class'>"active"</o>.</li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+    <ul>Task 3:
+        <li>Create an arrow function that simulates a scanning process <o class='class'>"Scanning for lifeforms..."</o> and returns <o class='class'>"No lifeforms detected"</o></li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <ul>Task 4:
+        <li>Create an arrow function that implicit returns coordinates as an object object with properties <o class='class'>RA</o>, <o class='class'>Dec</o>, and <o class='class'>Dist</o>, representing coordinates in space.</li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <ul>Task 5:
+        <li>Create a regular function instead of an arrow function for correct use of <o class='class'>'this'</o>, otherwise an arrow function will just ignore <o class='class'>'this'</o>, and will not print the name of the spacecraft</li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <h3>Append the output to the HTML element</h3>
+    <section id="console"><div class="agenda">Wildlife Oasis Dashboard:</div>
+        <div id="output"></div>
+   </section>   
+
+    <h4>References:</h4>
+    <ol>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax'>Spread syntax (...)</a></li>
+        <li><a href='https://www.w3schools.com/react/react_es6_spread.asp'>React ES6 Spread Operator</a></li>
+        <li><a href='https://www.javascripttutorial.net/javascript-object-spread/'>JavaScript Object Spread</a></li>
+        <li><a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">HTML DOM Element appendChild()</a></li>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML'>Element: insertAdjacentHTML() method</a></li>
+        <li><a href='https://www.tutorialspoint.com/how-to-append-data-to-div-element-using-javascript'>Append Data to Div Element Using JavaScript - Tutorialspoint</a></li>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify'>JSON.stringify()</a></li>
+        <li><a href='https://stackoverflow.com/questions/28149462/how-to-print-json-data-in-console-log'>How to print JSON data in console.log?</a></li>
+    </ol>
+
+<script src="wildlife.js"></script>   
+</body>
+</html>
