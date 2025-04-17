@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Exercise</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Object Exercise</h1>
+    
+    <p>In this exercise, you will practice the <o class='class'>object</o> with modern JavaScript features. 🍔 </p>
+
+    <p>As the lead scientist 🧑‍🔬 for the Crazy Science Lab 🧪, you will streamline the organization of research projects, 
+        manage participant details, and dynamically update research findings.</p>
+
+        <ul> The tasks: 
+            <li><b>Compile Participant Details with Shorthand Property Names:</b> Construct an object named <o class='class'>participant</o> with properties for <o class='class'>name</o>, <o class='class'>age</o>, and <o class='class'>studyField</o>.
+                Utilize shorthand property names to simplify your code.</li>
+            <li><b>Implement a Shorthand Function for Participant Info:</b>Copy the <o class='class'>participant</o> object by adding a shorthand method named <o class='class'>displayInfo</o>
+            that prints the participant's details using <o class='class'>this</o> and a template string.</li>
+            <li><b>Implement a Same Shorthand Arrow Function for Participant Info:</b> Echo the above task with an arrow function. Observe the behavior of <o class='class'>this</o> and explain your findings.</li>
+            <li><b>Using Computed Property Names:</b> Implement a function named <o class='class'>updateParticipanInfo</o> that takes a property name and value as arguments 
+                alongside an object and returns a new object with that property dynamically set.</li>
+        </ul>
+        
+
+    <h2>Step-by-step</h2>
+    
+    <ul> Task 1:
+        <li>Create a helper function to log output in both console and HTML</li>
+        <li><div id='console'>
+            const originalConsoleLog = console.log;<br>
+            <br>
+            // Override console.log<br>
+            console.log = function(...args) {<br>
+            <br>
+            &nbsp;// Call the original console.log for browser output<br>
+            &nbsp;originalConsoleLog.apply(console, args);<br>
+            <br>
+            // Output to .agenda div<br>
+            const agendaDiv = document.querySelector('.agenda');<br>
+            if (agendaDiv) {<br>
+            &nbsp;&nbsp;const message = args.map(arg => {<br>
+                &nbsp;&nbsp;&nbsp;if (typeof arg === 'object') {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return JSON.stringify(arg, null, 2);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} catch (e) { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return '[object]';<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                            &nbsp;&nbsp;&nbsp;} <br>
+                            &nbsp;&nbsp;&nbsp;return String(arg);<br>
+                            &nbsp;&nbsp;}).join(' ');<br>
+                            &nbsp;&nbsp;agendaDiv.textContent += message + '\n';<br>
+                            &nbsp;}<br>
+    };<br>
+            </div></li>
+        </ul>
+
+    <ul>Task 2:
+        <li>Compile Participant Details with Shorthand Property Names</o></li>
+        <li><div id='console'>
+            const participant = {<br>
+                &nbsp;name,<br>
+                &nbsp;age,<br>
+                &nbsp;studyField<br>
+            };<br>
+        </div></li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+    <ul>Task 3:
+        <li>Implement a Shorthand Function for Participant Info.
+            <div id="console">const participantCopy = {<br>
+                &nbsp;...participant,<br>
+                &nbsp;displayInfo ()<br>
+                &nbsp;{<br>
+                    &nbsp;&nbsp;console.log(`Participant: ${this.name}, Age: ${this.age}, Study Field: ${this.studyField}`);<br>
+                    &nbsp;}<br>
+            };<br>
+        </div>
+        </li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <ul>Task 4:
+        <li>Implement a Same Shorthand Arrow Function for Participant Info
+            <div id="console">
+                const participantAnotherCopy = {<br>
+                    &nbsp;...participant,<br>
+                    &nbsp;displayInfo: () =><br>
+                    &nbsp;{<br>
+                        &nbsp;&nbsp;console.log(`Participant: ${this.name}, Age: ${this.age}, Study Field: ${this.studyField}`);<br>
+                        &nbsp;}<br>
+                };<br>
+            </div>
+        </li>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+        <li>Observe the behavior of <o class="class">this</o>.</li>
+    </ul>
+
+    <ul>Task 5:
+        <li>Using Computed Property Names</li>
+        <div id="console">
+            function updateParticipantInfo(participant, key, value)<br>
+    {<br>
+        &nbsp;return {<br>
+            &nbsp;&nbsp;...participant,<br>
+            &nbsp;&nbsp;[key]: value<br>
+            &nbsp;};<br>
+    }<br>
+        </div>
+        <li>Print the result in the console</li>
+        <li>Print the result in the HTML tag</li>
+    </ul>
+
+    <h3>Append the output to the HTML element</h3>
+    <section id="console"><div class="output">Science Lab Directory:</div>
+        <div class="agenda"></div>
+   </section>   
+
+    <h4>References:</h4>
+    <ol>
+        <li><a href='https://ui.dev/shorthand-properties'>Shorthand Property and Method Names in JavaScript | ES6</a></li>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer'>Object initializer</a></li>
+        <li><a href='https://www.geeksforgeeks.org/shorthand-syntax-for-object-property-value-in-es6/'>Shorthand Syntax for Object Property Value in ES6</a></li>
+        <li><a href="https://www.w3schools.com/jsref/met_node_appendchild.asp">HTML DOM Element appendChild()</a></li>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML'>Element: insertAdjacentHTML() method</a></li>
+        <li><a href='https://www.tutorialspoint.com/how-to-append-data-to-div-element-using-javascript'>Append Data to Div Element Using JavaScript - Tutorialspoint</a></li>
+        <li><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify'>JSON.stringify()</a></li>
+        <li><a href='https://stackoverflow.com/questions/28149462/how-to-print-json-data-in-console-log'>How to print JSON data in console.log?</a></li>
+    </ol>
+
+<script src="science_lab.js"></script>   
+</body>
+</html>
