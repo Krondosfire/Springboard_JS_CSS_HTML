@@ -65,3 +65,13 @@ console.log(topStudent);
 
 const [ first, second, ...losers] = students;
 console.log(losers);
+
+const longJumpResults = ['Tammy', 'Jessica', 'Violet'];
+const swimMeetResults = ['Japan', 'France', 'Bulgaria'];
+
+function awardMedal([gold, silver, bronze]) {
+    return {gold, silver, bronze};
+};
+
+console.log(awardMedal(longJumpResults));
+console.log(awardMedal(swimMeetResults));
