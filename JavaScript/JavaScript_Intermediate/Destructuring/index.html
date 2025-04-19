@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Destructuring</h1>
+    
+    
+        
+    <ul>Shorthand Object Property:
+            
+            <li>Create a regular function that returns an object<br>
+                <div id='console'><b>function</b> makePerson(first, last, age) { <br>
+                    &nbsp; &nbsp;return {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: first, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last: last, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: age, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAlive: true <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}; <br>
+                } <br>
+                
+                </div></li>
+            
+        </ul>
+        
+        <ul>Create the same function but shortened:
+            <li>
+                <div id='console'><b>function</b> makePerson(first, last, age) { <br>
+                    &nbsp; &nbsp;return {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAlive: true <br>
+                    &nbsp;&nbsp;}; <br>
+                } <br>
+                
+                </div><br>
+            </li>
+            
+        </ul>
+        <ul>Shorthand Methods:
+            <li><div id='console'>const mathStuff =  { <br>
+                &nbsp;&nbsp;x : 200,<br>
+                &nbsp;&nbsp;add: function(a, b) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a + b; <br>
+                &nbsp;&nbsp;}, <br>
+                &nbsp;&nbsp;square: function(a) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a * a; <br>
+                &nbsp;&nbsp;} <br>
+                &nbsp;&nbsp;divide: function(a, b) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a / b; <br>
+                &nbsp;&nbsp;} <br>
+            }; <br>
+            
+            </div>
+    </li>
+    <li>The same object but shortened:
+        <div id='console'>const mathFunc =  { <br>
+            &nbsp;&nbsp;x : 200,<br>
+            &nbsp;&nbsp;add(a, b) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a + b; <br>
+            &nbsp;&nbsp;}, <br>
+            &nbsp;&nbsp;square(a) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a * a; <br>
+            &nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;divide(a, b) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a / b; <br>
+            &nbsp;&nbsp;} <br>
+        }; <br>
+        
+        </div>
+    </li>
+    <li>Do not use arrow functions when shorthanded!</li></ul>
+    
+    <ul>Computed Property Names:
+        <li>ES2015 allows us to create an object with a key that JavaScript can compute at definition</li>
+        <li>ES5:
+            <div id='console'><b>let</b> firstName = "Mary";<br>
+                            <b>let</b> instructor = {};<br>
+                            instructor[firstName] = "That's me!";
+                instructor.Mary = "That's me!"; <br>
+            <br>
+            
+            </div>
+        </li>
+        <li>ES2015:
+            <div id='console'><b>let</b> firstName = "Mary";<br>
+                <b>let</b> instructor = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[firstName] = "That's me!";<br>
+                }<br>
+                <br>
+                instructor.Mary = "That's me!"; <br>
+<br>
+
+</div>
+        </li>
+    </ul>
+                
+
+<script src="destructuring.js"></script>   
+</body>
+</html>
