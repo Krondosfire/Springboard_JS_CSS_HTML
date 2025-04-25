@@ -11,3 +11,4 @@ console.log(axios);
 // https://swapi.co/api/planets/
 const response = axios.get('https://swapi.co/api/planets/');
 console.log(response);
+console.log(axios);
