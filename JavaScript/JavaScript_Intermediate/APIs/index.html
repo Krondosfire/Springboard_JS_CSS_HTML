@@ -8,26 +8,24 @@
     
 </head>
 <body>
-    <h1>Destructuring</h1>
+    <h1>Axios</h1>
     
     
         
-    <ul>Shorthand Object Property:
+    <ul>AJAX requests are asynchronous, meaning that the code will continue to run while waiting for a response from the server:
             
-            <li>Create a regular function that returns an object<br>
-                <div id='console'><b>function</b> makePerson(first, last, age) { <br>
-                    &nbsp; &nbsp;return {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first: first, <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last: last, <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age: age, <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAlive: true <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;}; <br>
-                } <br>
-                
-                </div></li>
+            <li>The <b>axios.get()</b> completes before the response is received;</li>
+            <li>This means that if we want to use the data we get back from AJAX requests, we need to wait until the response has been given to us.</li>
             
         </ul>
-        
+
+
+        <form action="" id="searchform">
+            <input type="text" id="search">
+            <button>Search</button>
+        </form>
+
+        <img src="' alt="" id="dog">
         <ul>Create the same function but shortened:
             <li>
                 <div id='console'><b>function</b> makePerson(first, last, age) { <br>
