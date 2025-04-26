@@ -339,4 +339,77 @@ arr6.forEach(element => {
   const squared = element * element; // Square each element
   console.log(`Element: ${element}, Squared: ${squared}`); // Prints element and its square
 });
+// Write a browser-based JavaScript program that:
 
+// Accepts a CSV file upload from the user,
+
+// Parses and cleans the data (e.g., trims whitespace, handles missing values),
+
+// Calculates descriptive statistics (mean, median, stddev) for numeric columns,
+
+// Displays the results in the browser and/or allows the user to download a new CSV with the results.
+
+document.getElementById('csvInput').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const text = e.target.result;
+    const data = parseCSV(text);
+    const cleaned = cleanData(data);
+    const stats = computeStats(cleaned);
+    displayStats(stats);
+  };
+  reader.readAsText(file);
+});
+
+// Parse CSV into array of objects
+function parseCSV(text) {
+  const [headerLine, ...lines] = text.trim().split('\n');
+  const headers = headerLine.split(',').map(h => h.trim());
+  return lines.map(line => {
+    const values = line.split(',').map(v => v.trim());
+    const obj = {};
+    headers.forEach((h, i) => obj[h] = values[i]);
+    return obj;
+  });
+}
+
+// Clean data: trim, convert to numbers, handle missing
+function cleanData(data) {
+  return data.map(row => {
+    const cleaned = {};
+    for (const key in row) {
+      let val = row[key].trim();
+      if (val === '') val = null;
+      else if (!isNaN(Number(val))) val = Number(val);
+      cleaned[key] = val;
+    }
+    return cleaned;
+  });
+}
+
+// Compute mean, median, stddev for numeric columns
+function computeStats(data) {
+  const keys = Object.keys(data[0]);
+  const stats = {};
+  keys.forEach(key => {
+    const nums = data.map(row => row[key]).filter(v => typeof v === 'number');
+    if (!nums.length) return;
+    const mean = nums.reduce((a, b) => a + b, 0) / nums.length;
+    const sorted = nums.slice().sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    const median = sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid])/2 : sorted[mid];
+    const variance = nums.reduce((sum, v) => sum + (v - mean) ** 2, 0) / (nums.length - 1);
+    const stddev = Math.sqrt(variance);
+    stats[key] = { count: nums.length, mean, median, stddev };
+  });
+  return stats;
+}
+
+// Display stats in the browser
+function displayStats(stats) {
+  const div = document.getElementById('stats');
+  div.innerHTML = '<pre>' + JSON.stringify(stats, null, 2) + '</pre>';
+  console.table(stats); // Also print to console for demonstration
+}
