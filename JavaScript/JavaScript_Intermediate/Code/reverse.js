@@ -112,3 +112,67 @@ console.log(isBalanacedParentheses("(())")); // Output: true
 console.log(isBalanacedParentheses("(()")); // Output: false
 console.log(isBalanacedParentheses("())(")); // Output: false
 console.log(isBalanacedParentheses("()()()")); // Output: true
+
+// Find the max and min in an array
+console.log(`***********Find the max and min in an array**************`);
+
+const arr1 = [70, 20, 90, 5, 42, 87, 254, 8, 56, 112, 2, 49];
+console.log(`Array: ${arr1}`); // Output: [70, 20, 90, 5, 42, 87, 254, 8, 56, 112, 2, 49]
+const minVal = Math.min(...arr1); // Find the min value
+
+const maxVal = Math.max(...arr1); // Find the max value
+console.log(`Min value: ${minVal}`); // Output: 2
+console.log(`Max value: ${maxVal}`); // Output: 254
+
+function findMin(arr1) {
+    return Math.min(...arr1);
+}
+function findMax(arr1) {
+    return Math.max(...arr1);
+};
+
+console.log(`Min value: ${findMin(arr1)}`); // Output: 2
+console.log(`Max value: ${findMax(arr1)}`); // Output: 254
+
+
+// Remove the duplicates from an array
+console.log(`***********Remove the duplicates from an array**************`);
+
+function removeDuplicates(arr) {
+    return[...new Set(arr)];
+}
+const arr2 = [1, 4, 66, 8, 4, 23, 9, 11, 66, 12, 5, 9, 3, 82, 12, 9];
+const uniqueArray = removeDuplicates(arr2);
+console.log(`Array: ${arr2}`); // Output: [1, 4, 66, 8, 4, 23, 9, 11, 66, 12, 5, 9, 3, 82, 12, 9]
+console.log(`Unique Array: ${uniqueArray}`); // Output: [1, 4, 66, 8, 23, 9, 11, 12, 5, 3, 82]
+
+// Rotate an array by a given number of positions (circular shift)
+console.log(`***********Rotate an array by a given number of positions (circular shift)**************`);
+function rotateArr(arr, positions) {
+    const len = arr.length;
+    // Normalize positions to avoid unnecessary rotations
+    positions = positions % len;
+
+    // Handle negative positions (rotate left)
+    if(positions < 0) {
+        positions = len + positions;
+    }
+    // Rotate the array
+    const rotatedArr = arr.slice(positions).concat(arr.slice(0, positions));
+    return rotatedArr;
+}
+
+// Example usage:
+const arr3 = [38, 8, 26, 111, 3, 8, 63];
+console.log(`Array: ${arr3}`); // Output: [38, 8, 26, 111, 3, 8, 63]
+// Rotate right by 2 positions
+const rotateRight = rotateArr(arr3, 2);
+console.log("Rotated right by 2 positions:", rotateRight); // Output: [26, 111, 3, 8, 63, 38, 8]
+// Rotate left by 3 positions
+const rotateLeft = rotateArr(arr3, -3);
+console.log("Rotated left by 3 positions:", rotateLeft); // Output: [111, 3, 8, 63, 38, 8, 26]
+// Example with positions greater than array length
+const rotatedLarge = rotateArr(arr3, 10);
+console.log("Rotated by 10 positions:", rotatedLarge); // Output: [8, 26, 111, 3, 8, 63, 38]
+
+// 

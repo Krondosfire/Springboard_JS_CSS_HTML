@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Generator</title>
+</head>
+<body>
+    <input type="file" id="excelFileInput" accept=".txt, .csv" />  <!-- Accept CSV or TXT -->
+    <p>Select your tab-separated text file (e.g., file.txt).</p>
+<div id="table"></div>
+<button onclick="generateSampleCSV(10, 5, 'sample.csv')">Download Sample CSV</button>
+    <script src="generator.js"></script>
+</body>
+</html>
