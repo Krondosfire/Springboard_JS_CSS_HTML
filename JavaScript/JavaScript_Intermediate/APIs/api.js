@@ -61,3 +61,21 @@ form.addEventListener("submit", function (error) {
     input.value = '';
 })
 
+// Axios GET params
+console.log(`*************************Axios GET params**********************`);
+
+async function getJoke(firstName, lastName) {
+    let res = await axios.get(`https://api.chucknorris.io/jokes/random`, {params: { firstName, lastName }});
+    console.log(res.data.value);
+}
+console.log(getJoke('Javor', 'Mladenoff'));
+
+// Axios POST request
+console.log(`*************************Axios POST request**********************`);
+
+async function getUsers() {
+    const res = await axios.get('https://reqres.in/api/users/2');
+    console.log(res);
+}
+
+console.log(getUsers());

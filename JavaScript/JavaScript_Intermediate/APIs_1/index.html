@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the Web Works and AJAX</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Axios</h1>
+    
+    
+        
+    <ul>AJAX requests are asynchronous, meaning that the code will continue to run while waiting for a response from the server:
+            
+            <li>The <b>axios.get()</b> completes before the response is received;</li>
+            <li>This means that if we want to use the data we get back from AJAX requests, we need to wait until the response has been given to us.</li>
+            
+        </ul>
+
+
+        <form action="" id="searchform">
+            <input type="text" id="search">
+            <button>Search</button>
+        </form>
+
+        <img src="' alt="" id="dog">
+        <ul>Create the same function but shortened:
+            <li>
+                <div id='console'><b>function</b> makePerson(first, last, age) { <br>
+                    &nbsp; &nbsp;return {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;first, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;last, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isAlive: true <br>
+                    &nbsp;&nbsp;}; <br>
+                } <br>
+                
+                </div><br>
+            </li>
+            
+        </ul>
+        <ul>Shorthand Methods:
+            <li><div id='console'>const mathStuff =  { <br>
+                &nbsp;&nbsp;x : 200,<br>
+                &nbsp;&nbsp;add: function(a, b) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a + b; <br>
+                &nbsp;&nbsp;}, <br>
+                &nbsp;&nbsp;square: function(a) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a * a; <br>
+                &nbsp;&nbsp;} <br>
+                &nbsp;&nbsp;divide: function(a, b) { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a / b; <br>
+                &nbsp;&nbsp;} <br>
+            }; <br>
+            
+            </div>
+    </li>
+    <li>The same object but shortened:
+        <div id='console'>const mathFunc =  { <br>
+            &nbsp;&nbsp;x : 200,<br>
+            &nbsp;&nbsp;add(a, b) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a + b; <br>
+            &nbsp;&nbsp;}, <br>
+            &nbsp;&nbsp;square(a) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a * a; <br>
+            &nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;divide(a, b) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a / b; <br>
+            &nbsp;&nbsp;} <br>
+        }; <br>
+        
+        </div>
+    </li>
+    <li>Do not use arrow functions when shorthanded!</li></ul>
+    
+    <ul>Computed Property Names:
+        <li>ES2015 allows us to create an object with a key that JavaScript can compute at definition</li>
+        <li>ES5:
+            <div id='console'><b>let</b> firstName = "Mary";<br>
+                            <b>let</b> instructor = {};<br>
+                            instructor[firstName] = "That's me!";
+                instructor.Mary = "That's me!"; <br>
+            <br>
+            
+            </div>
+        </li>
+        <li>ES2015:
+            <div id='console'><b>let</b> firstName = "Mary";<br>
+                <b>let</b> instructor = {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[firstName] = "That's me!";<br>
+                }<br>
+                <br>
+                instructor.Mary = "That's me!"; <br>
+<br>
+
+</div>
+        </li>
+    </ul>
+                
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="api.js"></script>   
+</body>
+</html>
