@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercizes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section><div id="countdown"></div><br>
+  <div><button onclick="startCountdown(10)">Start Countdown</button></div></section><br> 
+
+
+  <section><div id="table-container"></div>
+<div><button onclick="displayTable()">Show Table</button>
+<button id="save_table" type="button">Save Table</button></div></section><br>
+<section><form id="add-form" style="margin-top:20px;">
+  <label>Name:</label><br><input type="text" id="name" placeholder="Name" required><br>
+  <label>Age:</label><br><input type="number" id="age" placeholder="Age" required><br>
+  <label>Country:</label><br><input type="text" id="country" placeholder="Country" required>
+  <button type="submit">Add Row</button>
+</form></section>
+
+    <script src="mta.js"></script>
+</body>
+</html>
