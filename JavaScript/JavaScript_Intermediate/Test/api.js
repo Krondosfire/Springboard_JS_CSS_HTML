@@ -240,3 +240,194 @@ console.log(palindromeIndex("abca")); // Output: 1
 console.log(palindromeIndex("racecar")); // Output: -1
 console.log(palindromeIndex("abcde")); // Output: -1
 console.log(palindromeIndex("a")); // Output: -1
+
+
+function main() {
+    var i = 4;
+    var d = 4.0;
+    var s = "HackerRank";
+    // Declare second integer, double, and String variables.
+    var i2;
+    var d2;
+    var s2;
+    // Read and save an integer, double, and String to your variables.
+    i2 = parseInt(readLine());
+    d2 = parseFloat(readLine());
+    s2 = readLine();
+    // Print the sum of both integer variables on a new line.
+    console.log(i + i2);
+
+    // Print the sum of the double variables on a new line.
+    console.log((d + d2).toFixed(1));
+// Concatenate and print the String variables on a new line
+    console.log(s + s2);
+    // The 's' variable above should be printed first.
+}
+console.log(main()); // Output: 8, 8.0, HackerRankHelloWorld
+
+function flippingMatrix(matrix) {
+    const n = matrix.length / 2; // Size of the submatrix
+    let sum = 0;
+
+    for(let i = 0; i < n; i++) {
+        for(let j = 0; j < n; j++) {
+            // Calculate the maximum value from the four possible positions
+            sum += Math.max(
+                matrix[i][j],
+                matrix[i][2 * n - 1 - j],
+                matrix[2 * n - 1 - i][j],
+                matrix[2 * n - 1 - i][2 * n - 1 - j]
+            );
+            
+        }
+    }
+    return sum;
+}
+console.log(flippingMatrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])); // Output: 68
+console.log(flippingMatrix([[1, 2], [3, 4]])); // Output: 4
+console.log(flippingMatrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // Output: 15
+console.log(flippingMatrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])); // Output: 68
+
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+  
+  // Example usage:
+  console.log(fibonacci(12)); // Output: 144    
+
+  function findMissingNumber(arr) {
+    const n = arr.length + 1; // since one number is missing
+    const expectedSum = (n * (n + 1)) / 2;
+    const actualSum = arr.reduce((sum, num) => sum + num, 0);
+    return expectedSum - actualSum;
+}
+
+// Example usage:
+const arr = [1, 2, 4, 5, 6]; // missing number is 3
+console.log(findMissingNumber(arr)); // Output: 3
+
+// Merge two sorted linked lists
+console.log(`***********Merge two sorted linked lists**************`);
+   
+// Definition for singly-linked list.
+class ListNode {
+    constructor(val, next = null) {
+        this.val = val;
+        this.next = next;
+}
+}
+// Function to merge two sorted linked lists
+function mergeTwoLists(l1, l2) {
+let dummy = new ListNode(0);
+let current = dummy;
+
+while (l1 !== null && l2 !== null) {
+    if(l1.val < l2.val) {
+        current.next = l1;
+        l1 = l1.next;
+    } else {
+        current.next = l2;
+        l2 = l2.next;
+    }
+    current = current.next;
+}
+// Attach the remaining nodes, if any
+current.next = l1 !== null ? l1 : l2;
+return dummy.next;
+}
+
+// Helper function to create a linked list from an array
+function arrayToList(arr) {
+    let dummy = new ListNode(0);
+    let current = dummy;
+    for ( let val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+
+// Helper function to print linked list as array
+function listToArray(head) {
+    let arr = [];
+    while (head) {
+        arr.push(head.val);
+        head = head.next;
+    }
+    return arr;
+}
+
+// Example usage:
+let l1 = arrayToList([1, 3, 5]);
+let l2 = arrayToList([2, 4, 6]);
+let merged = mergeTwoLists(l1, l2);
+console.log(listToArray(merged)); // Output: [1, 2, 3, 4, 5, 6]
+
+function isBalanacedParentheses(str) {
+    let stack = [];
+    for (let char of str) {
+        if ( char === '(') {
+            stack.push(char);
+        } else if(char === ')') {
+            if(stack.length === 0) {
+                return false;
+            }
+            stack.pop();
+        }
+    }
+    return stack.length === 0;
+}
+// Example usage:
+console.log(isBalanacedParentheses("(())")); // Output: true
+console.log(isBalanacedParentheses("(()")); // Output: false
+console.log(isBalanacedParentheses("())(")); // Output: false
+console.log(isBalanacedParentheses("()()()")); // Output: true
+
+// Running total calculator
+function runningTotal(arr, field) {
+    let total = 0;
+    return arr.map(item => {
+      total += Number(item[field] || 0);
+      return { ...item, [`${field}_runningTotal`]: total };
+    });
+  }
+
+  // Moving average calculator
+  function movingAverage(arr, field, windowSize) {
+    return arr.map((item, idx, src) => {
+      const window = src.slice(Math.max(0, idx - windowSize + 1), idx + 1);
+      const avg = window.reduce((sum, row) => sum + Number(row[field] || 0), 0) / window.length;
+      return { ...item, [`${field}_movingAvg`]: avg };
+    });
+  }
+
+  function groupBy(arr, keyFn) {
+    return arr.reduce((acc, item) => {
+      const key = keyFn(item);
+      if (!acc[key]) acc[key] = [];
+      acc[key].push(item);
+      return acc;
+    }, {});
+  }
+
+  function removeDuplicates(arr, keyFn) {
+    const seen = new Set();
+    return arr.filter(item => {
+      const key = keyFn(item);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  // Simple CSV parser
+function parseCSV(text) {
+    const [headerLine, ...lines] = text.trim().split('\n');
+    const headers = headerLine.split(',').map(h => h.trim());
+    return lines.map(line => {
+      const values = line.split(',').map(v => v.trim());
+      return Object.fromEntries(headers.map((h, i) => [h, values[i]]));
+    });
+  }
