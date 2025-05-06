@@ -930,3 +930,389 @@ function solve(meal_cost, tip_percent, tax_percent) {
 console.log(solve(100, 15, 8)); // Output: 123
 
 console.log(solve(50, 10, 5)); // Output: 58
+
+// Task
+// Given an integer, n, perform the following conditional actions:
+
+// If n is odd, print Weird
+// If n is even and in the inclusive range of 2 to 5, print Not Weird
+// If n is even and in the inclusive range of 6 to 20, print Weird
+// If n is even and greater than 20, print Not Weird
+// Complete the stub code provided in your editor to print whether or not  is weird.
+
+// Input Format
+
+// A single line containing a positive integer, n.
+
+// Constraints
+// 1 <= n <= 100
+//let inputString = '';
+let currentLine = 0;
+function readLine() {
+    return inputString[currentLine++];
+}
+function main() {
+    const n = parseInt(readLine().trim(), 10);
+
+    if (n % 2 === 1) {
+        console.log("Weird");
+    } else if (n >= 2 && n <= 5) {
+        console.log("Not Weird");
+    } else if (n >= 6 && n <= 20) {
+        console.log("Weird");
+    } else {
+        console.log("Not Weird");
+    }
+}
+
+// Example usage:
+console.log(main(3)); // Output: Weird
+console.log(main(4)); // Output: Not Weird
+console.log(main(6)); // Output: Weird
+console.log(main(22)); // Output: Not Weird
+
+// Implement a simple text editor. The editor initially contains an empty string, . Perform  operations of the following 4 types:
+
+// 1. append(W) - Append string S to the end of .
+// 2. delete(k) - Delete the last S characters of .
+// 3. print k-th - Print the  character of S.
+// 4. undo() - Undo the last (not previously undone) operation of type 1 or 2, reverting S to the state it was in prior to that operation.
+
+// Input Format
+
+// The first line contains an integer, Q, denoting the number of operations.
+// Each line i of the Q subsequent lines (where 0 <= i < Q) defines an operation to be performed. 
+// Each operation starts with a single integer, t (where t e{1,2,3,4}), denoting a type of operation as defined in the Problem Statement above. 
+// If the operation requires an argument, t is followed by its space-separated argument. For example, if t = 1 and W="abcd", line i will be 1 abcd.
+// Constraints
+// 1 <= Q <= 10^6
+// 1 <=k <= |S|
+// The sum of the lengths of all W in the input <= 10^6.
+// The sum of k over all delete operations <=2*10^6.
+// All input characters are lowercase English letters.
+// It is guaranteed that the sequence of operations given as input is possible to perform.
+
+function processData04(input) {
+    const lines = input.split('\n');
+    const Q = parseInt(lines[0], 10);
+    let S = '';
+    const stack = [];
+    
+    for (let i = 1; i <= Q; i++) {
+        const line = lines[i] ? lines[i].trim() : '';
+        if (line === '') continue;
+        
+        const parts = line.split(' ');
+        const op = parseInt(parts[0], 10);
+        
+        switch (op) {
+            case 1: {
+                const W = parts.slice(1).join(' ');
+                stack.push(S);
+                S += W;
+                break;
+            }
+            case 2: {
+                const k = parseInt(parts[1], 10);
+                stack.push(S);
+                S = S.slice(0, S.length - k);
+                break;
+            }
+            case 3: {
+                const k = parseInt(parts[1], 10);
+                console.log(S[k - 1]);
+                break;
+            }
+            case 4: {
+                if (stack.length > 0) {
+                    S = stack.pop();
+                }
+                break;
+            }
+        }
+    }
+}
+
+// Example usage:
+console.log(processData04("8\n1 abc\n1 def\n3 2\n2 3\n1 xyz\n3 4\n4\n3 2")); // Output: b, d, c
+console.log(processData04("5\n1 ab\n1 cd\n3 2\n2 2\n3 1")); // Output: b, a
+console.log(processData04("4\n1 hello\n3 1\n2 2\n3 1")); // Output: h, l
+console.log(processData04("6\n1 abc\n1 def\n3 2\n2 3\n1 xyz\n3 4")); // Output: b, d, c
+
+
+// You have an infinite number of 4 types of lego blocks of sizes given as (depth x height x width):
+
+// d	h	w
+// 1	1	1
+// 1	1	2
+// 1	1	3
+// 1	1	4
+// Using these blocks, you want to make a wall of height n and widthm . Features of the wall are:
+
+// - The wall should not have any holes in it.
+// - The wall you build should be one solid structure, so there should not be a straight vertical break across all rows of bricks.
+// - The bricks must be laid horizontally.
+
+// How many ways can the wall be built?
+
+// Example
+// n = 2
+// m = 3
+
+
+// The height is 2 and the width is 3. There are 9 valid permutations in all.
+// Function Description
+
+// Complete the legoBlocks function in the editor below.
+
+// legoBlocks has the following parameter(s):
+
+// int n: the height of the wall
+// int m: the width of the wall
+// Returns
+// - int: the number of valid wall formations modulo (10^9 + 7)
+
+// Input Format
+
+// The first line contains the number of test cases t.
+
+// Each of the next t lines contains two space-separated integers n and m.
+
+// Constraints
+// 1 <= t <= 100
+// 1 <= n,m <= 1000
+
+function legoBlocks(n, m) {
+    const MOD = 1000000007n;
+
+    // Step 1: ways to build a single row of width w
+    const row_ways = Array(m + 1).fill(0n);
+    row_ways[0] = 1n;
+    for (let w = 1; w <= m; w++) {
+        for (let brick = 1; brick <= 4; brick++) {
+            if (w - brick >= 0) row_ways[w] = (row_ways[w] + row_ways[w - brick]) % MOD;
+        }
+    }
+
+    // Step 2: all possible walls (not necessarily solid)
+    const all_walls = Array(m + 1).fill(0n);
+    all_walls[0] = 1n;
+    for (let w = 1; w <= m; w++) {
+        all_walls[w] = powmod(row_ways[w], BigInt(n), MOD);
+    }
+
+    // Step 3: Inclusion-Exclusion for solid walls
+    const solid = Array(m + 1).fill(0n);
+    solid[0] = 1n;
+    for (let w = 1; w <= m; w++) {
+        let temp = all_walls[w];
+        for (let k = 1; k < w; k++) {
+            temp = (temp - (solid[k] * all_walls[w - k]) % MOD + MOD) % MOD;
+        }
+        solid[w] = temp;
+    }
+    return Number(solid[m]);
+
+    // Fast modular exponentiation with BigInt
+    function powmod(a, b, mod) {
+        let res = 1n;
+        let base = a % mod;
+        while (b > 0) {
+            if (b % 2n === 1n) res = (res * base) % mod;
+            base = (base * base) % mod;
+            b = b / 2n;
+        }
+        return res;
+    }
+}
+
+
+
+// Example usage:
+console.log(legoBlocks(2, 3)); // Output: 9
+console.log(legoBlocks(1, 1)); // Output: 1
+console.log(legoBlocks(2, 2)); // Output: 4
+console.log(legoBlocks(3, 3)); // Output: 27
+console.log(legoBlocks(4, 4)); // Output: 256
+console.log(legoBlocks(5, 5)); // Output: 3125
+
+// Jesse loves cookies and wants the sweetness of some cookies to be greater than value k. 
+// To do this, two cookies with the least sweetness are repeatedly mixed. This creates a special combined cookie with:
+// sweetness =(1 * Least sweet cookie + 2 * 2nd least sweet cookie).
+// This occurs until all the cookies have a sweetness >= k.
+// Given the sweetness of a number of cookies, determine the minimum number of operations required. If it is not possible, return -1.
+// Example: k = 9; A = [2,7,3,6,4,6]
+// The smallest values are 2,3.
+// Remove them then return 2 + 2 * 3 = 8 to the array. Now A = [8,7,6,4,6].
+// Remove 4,6 and return 4 + 6 * 2 = 16 to the array. Now A = [16,8,7,6].
+// Remove 6,7, return 6 + 2 * 7 = 20 and A = [20,16,8,7].
+// Finally, remove 8,7 and return 7 + 2 * 8 = 23 to A. Now A = [23,20,16].
+// All values are >= k = 9 so the process stops after 4 iterations. Return 4.
+// Function Description:
+// Complete the cookies function in the editor below.
+// cookies has the following parameters:
+// int k: the threshold value
+// int A[n]: an array of sweetness values
+// Returns:
+// int: the number of iterations required or 
+// Input Format:
+// The first line has two space-separated integers,  and , the size of  and the minimum required sweetness respectively.
+// The next line contains  space-separated integers, .
+// Constraints:
+// 1 <= n <= 10^6
+// 0 <= k <= 10^9
+// 0 <= A[i] <= 10^6
+
+class MinHeap {
+    constructor() {
+        this.heap = [];
+    }
+    size() {
+        return this.heap.length;
+    }
+    peek() {
+        return this.heap[0];
+    }
+    push(val) {
+        this.heap.push(val);
+        this._siftUp();
+    }
+    pop() {
+        if (this.size() === 0) return undefined;
+        const min = this.heap[0];
+        const end = this.heap.pop();
+        if (this.size() > 0) {
+            this.heap[0] = end;
+            this._siftDown();
+        }
+        return min;
+    }
+    _siftUp() {
+        let idx = this.heap.length - 1;
+        const element = this.heap[idx];
+        while (idx > 0) {
+            let parentIdx = Math.floor((idx - 1) / 2);
+            let parent = this.heap[parentIdx];
+            if (element >= parent) break;
+            this.heap[parentIdx] = element;
+            this.heap[idx] = parent;
+            idx = parentIdx;
+        }
+    }
+    _siftDown() {
+        let idx = 0;
+        const length = this.heap.length;
+        const element = this.heap[0];
+        while (true) {
+            let leftChildIdx = 2 * idx + 1;
+            let rightChildIdx = 2 * idx + 2;
+            let swap = null;
+            if (leftChildIdx < length) {
+                if (this.heap[leftChildIdx] < element) {
+                    swap = leftChildIdx;
+                }
+            }
+            if (rightChildIdx < length) {
+                if (
+                    (swap === null && this.heap[rightChildIdx] < element) ||
+                    (swap !== null && this.heap[rightChildIdx] < this.heap[leftChildIdx])
+                ) {
+                    swap = rightChildIdx;
+                }
+            }
+            if (swap === null) break;
+            this.heap[idx] = this.heap[swap];
+            this.heap[swap] = element;
+            idx = swap;
+        }
+    }
+}
+
+function cookies(k, A) {
+    const heap = new MinHeap();
+    for (let x of A) heap.push(x);
+
+    let ops = 0;
+    while (heap.size() > 1 && heap.peek() < k) {
+        let least = heap.pop();
+        let second = heap.pop();
+        let combined = least + 2 * second;
+        heap.push(combined);
+        ops++;
+    }
+    return heap.peek() >= k ? ops : -1;
+}
+
+// Example usage:
+console.log(cookies(9, [2, 7, 3, 6, 4, 6])); // Output: 4
+console.log(cookies(10, [1, 2, 3, 4])); // Output: 3
+console.log(cookies(5, [1, 1, 1, 1])); // Output: -1
+
+// Consider an undirected graph where each edge weighs 6 units. Each of the nodes is labeled consecutively from 1 to n.
+// You will be given a number of queries. For each query, you will be given a list of edges describing an undirected graph.
+// After you create a representation of the graph, you must determine and report the shortest distance to each of the other nodes from a given starting position using
+// the breadth-first search algorithm(BFS). Return an array of distances from the start node in node number order. If a node is unreachable, 
+// return -1 for that node.
+// Example: n = 5 // number of nodes; m = 3 // number of edges; edges = [1,2],[1,3],[3,4]; s = 1 // starting node. 
+// All distances are from the start node 1. Outputs are calculated for distances to nodes 2 through 5: [6,6,12,-1]. Each edge is 6 units, 
+// and the unreachable node 5 has the required return distance of -1.
+// Function Description:
+// Complete the bfs function in the editor below. If a node is unreachable, its distance is -1.
+// BFS has the following parameters:
+// int n: the number of nodes;
+// int m: the number of edges;
+// int edges[m][2]: start and end nodes for edges;
+// int s: the node to start traversals from.
+// Returns:
+// The first line contains an integer q, the number of queries. Each of the following q sets of lines has the following format:
+// * The first line contains two space-separated integers n and m, the number of nodes and edges in the graph;
+// * Each line i of the m subsequent lines contains two space-separated integers, u and v, that describe an edge between nodes u and v;
+// * The last line contains a single integer, s, the node number to start from.
+// Constraints:
+// 1 <= q <= 10
+// 2 <= n <= 1000
+// 1 <= m <= (n*(n-1))/2
+// 1 <= u,v,s <= n
+
+function bfs(n, m, edges, s) {
+    // Build adjacency list
+    const adj = Array.from({length: n + 1}, () => []);
+    for (const [u, v] of edges) {
+        adj[u].push(v);
+        adj[v].push(u);
+    }
+
+    // Initialize distances and queue
+    const dist = Array(n + 1).fill(-1);
+    const visited = Array(n + 1).fill(false);
+    const queue = [];
+
+    dist[s] = 0;
+    visited[s] = true;
+    queue.push(s);
+
+    while (queue.length > 0) {
+        const node = queue.shift();
+        for (const neighbor of adj[node]) {
+            if (!visited[neighbor]) {
+                visited[neighbor] = true;
+                dist[neighbor] = dist[node] + 6;
+                queue.push(neighbor);
+            }
+        }
+    }
+
+    // Collect results, skipping the start node
+    const result = [];
+    for (let i = 1; i <= n; i++) {
+        if (i !== s) result.push(dist[i]);
+    }
+    return result;
+}
+
+// Example usage:
+console.log(bfs(5, 3, [[1, 2], [1, 3], [3, 4]], 1)); // Output: [6, 6, 12, -1]
+console.log(bfs(4, 2, [[1, 2], [2, 3]], 1)); // Output: [6, 12, -1]
+console.log(bfs(6, 5, [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6]], 1)); // Output: [6, 12, 18, -1]
+console.log(bfs(3, 2, [[1, 2], [2, 3]], 1)); // Output: [6, 12]
+console.log(bfs(7, 6, [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7]], 1)); // Output: [6, 12, 18, -1, -1]
