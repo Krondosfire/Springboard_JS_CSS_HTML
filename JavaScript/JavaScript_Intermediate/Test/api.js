@@ -1316,3 +1316,214 @@ console.log(bfs(4, 2, [[1, 2], [2, 3]], 1)); // Output: [6, 12, -1]
 console.log(bfs(6, 5, [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6]], 1)); // Output: [6, 12, 18, -1]
 console.log(bfs(3, 2, [[1, 2], [2, 3]], 1)); // Output: [6, 12]
 console.log(bfs(7, 6, [[1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7]], 1)); // Output: [6, 12, 18, -1, -1]
+
+
+// Task:
+// Write a Person class with an instance variable, age, and a constructor that takes an integer, initialAge, as a parameter. 
+// The constructor must assign initialAge to age after confirming the argument passed as initialAge is not negative; if a negative argument is passed as , 
+// the constructor should set age to 0 and print Age is not valid, setting age to 0.. In addition, you must write the following instance methods:
+// 1. yearPasses() should increase the age instance variable by 1.
+// 2. amIOld() should perform the following conditional actions:
+// * If age < 13, print You are young..
+// * If age >= 13 and age < 18, print You are a teenager..
+// * Otherwise, print You are old..
+// To help you learn by example and complete this challenge, much of the code is provided for you, but you'll be writing everything in the future. 
+// The code that creates each instance of your Person class is in the main method. Don't worry if you don't understand it all quite yet!
+// Note: Do not remove or alter the stub code in the editor.
+// Input Format:
+// Input is handled for you by the stub code in the editor.
+// The first line contains an integer, T (the number of test cases), and the T subsequent lines each contain an integer denoting the age of a Person instance.
+// Constraints:
+// 1 <= T <= 4;
+// -5 <= age <=30
+
+function Person(initialAge) {
+    if(initialAge < 0) {
+        this.age = 0;
+        console.log("Age is not valid, setting age to 0.");
+    } else {
+        this.age = initialAge;
+    }
+
+    this.amIOld = function() {
+        if(this.age < 13) {
+            console.log("You are young.");
+        } else if(this.age >= 13 && this.age < 18) {
+            console.log("You are a teenager.");
+        }else {
+            console.log("You are old.");
+        }
+    };
+    this.yearPasses = function() {
+        this.age += 1;
+    };
+}
+
+// Complete the preOrder function in the editor below, which has 1 parameter: a pointer to the root of a binary tree. 
+// It must print the values in the tree's preorder traversal as a single line of space-separated values.
+// Input Format:
+// Our test code passes the root node of a binary tree to the preOrder function.
+// Constraints:
+// 1 <= Nodes in the tree <= 500
+
+function preOrder(root) {
+    // Helper function to traverse and collect the values
+    function traverse(node, result) {
+        if(node === null) return;
+        result.push(node.data); // Visit the root
+        traverse(node.left, result); // Traverse left subtree
+        traverse(node.right, result); // Traverse right subtree
+    }
+    const result = [];
+    traverse(root, result);
+    console.log(result.join(' '));
+}
+
+// Huffman coding assigns variable length codewords to fixed length input characters based on their frequencies. 
+// More frequent characters are assigned shorter codewords and less frequent characters are assigned longer codewords. 
+// All edges along the path to a character contain a code digit. If they are on the left side of the tree, they will be a 0 (zero). 
+// If on the right, they'll be a 1 (one). Only the leaves will contain a letter and its frequency count. 
+// All other nodes will contain a null instead of a character, and the count of the frequency of all of it and its descendant characters.
+
+// For instance, consider the string ABRACADABRA. There are a total of 11 characters in the string. 
+// This number should match the count in the ultimately determined root of the tree. Our frequencies are A = 5, B = 2, R = 2, C = 1 and D = 1. 
+// The two smallest frequencies are for C and D, both equal to 1, so we'll create a tree with them. 
+// The root node will contain the sum of the counts of its descendants, in this case 1 + 1 = 2. 
+// The left node will be the first character encountered, C, and the right will contain D. 
+// Next we have 3 items with a character count of 2: the tree we just created, the character B and the character R. 
+// The tree came first, so it will go on the left of our new root node. B will go on the right. 
+// Repeat until the tree is complete, then fill in the 1's and 0's for the edges. 
+// Input characters are only present in the leaves. Internal nodes have a character value of ϕ (NULL). 
+// We can determine that our values for characters are:
+
+// A - 0
+// B - 111
+// C - 1100
+// D - 1101
+// R - 10
+// Our Huffman encoded string is:
+
+// A B    R  A C     A D     A B    R  A
+// 0 111 10 0 1100 0 1101 0 111 10 0
+// or
+// 01111001100011010111100
+// To avoid ambiguity, Huffman encoding is a prefix free encoding technique. No codeword appears as a prefix of any other codeword.
+// To decode the encoded string, follow the zeros and ones to a leaf and return the character there.
+// You are given pointer to the root of the Huffman tree and a binary coded string to decode. You need to print the decoded string.
+// Function Description:
+// Complete the function decode_huff in the editor below. It must return the decoded string.
+// decode_huff has the following parameters:
+// * root: a reference to the root node of the Huffman tree
+// * s: a Huffman encoded string
+// Input Format:
+// There is one line of input containing the plain string, s. Background code creates the Huffman tree then passes the 
+// head node and the encoded string to the function.
+// Constraints:
+// 1 <= |s| <= 25
+function processdata05(input) {
+    console.log(input);
+}
+
+function decode_huff(root, s) {
+    let result = '';
+    let node = root;
+    for(let i = 0; i < s.length; i++) {
+        node = s[i] === '0' ? node.left : node.right;
+        if(node.left && !node.right) { // Leaf node
+            result += node.data;
+        node = root; // Reset to root for next character
+        }
+    }
+    console.log(result);
+}
+    
+// There is a given list of strings where each string contains only lowercase letters from a - j, inclusive. 
+// The set of strings is said to be a GOOD SET if no string is a prefix of another string. 
+// In this case, print GOOD SET. Otherwise, print BAD SET on the first line followed by the string being checked.
+// Note If two strings are identical, they are prefixes of each other.
+// Example: words = ['abcd', 'bcd', 'abcde', 'bcde']
+// Here 'abcd' is a prefix of 'abcde' and 'bcd' is a prefix of 'bcde'. Since 'abcde' is tested first, print
+// BAD SET  
+// abcde
+// words = ['ab','bc','cd']
+// No string is a prefix of another so print
+// GOOD SET 
+// Function Description:
+// Complete the noPrefix function in the editor below.
+// noPrefix has the following parameter(s):
+// - string words[n]: an array of strings
+// Prints:
+// - string(s): either GOOD SET or BAD SET on one line followed by the word on the next line. No return value is expected.
+// Input Format:
+// First line contains n, the size of words[].
+// Then next  lines each contain a string, words[i].
+// Constraints:
+// 1 <= n <= 10^5
+// 1 <= the length of words[i] <= 60
+// All letters in words[i] are in the range 'a' through 'j', inclusive.
+
+function noPrefix(words) {
+    // Trie node definition
+    class TrieNode {
+        constructor() {
+            this.children = {};
+            this.isEnd = false;
+        }
+    }
+    const root = new TrieNode();
+    for(const word of words) {
+        let node = root;
+        let isPrefix = false;
+
+        for(let i = 0; i < word.length; i++) {
+            const ch = word[i];
+            if(!node.children[ch]) {
+                node.children[ch] = new TrieNode();
+            }
+            node = node.children[ch];
+
+            // If we reach a node that is already marked as end, it means the current word is a prefix of an existing word
+            if(node.isEnd) {
+                isPrefix = true;
+                break;
+            }
+        }
+        // If afterinserting, the current node has children, this word is a prefix of a previous word
+        if(node.isEnd || Object.keys(node.children).length > 0 || isPrefix) {
+            console.log("BAD SET");
+            console.log(word);
+            return;
+        }
+        node.isEnd = true; // Mark the end of the word
+    }
+    console.log('GOOD SET');
+}
+
+function main1() {
+    const n = parseInt(readLine().trim(), 10);
+    const words = [];
+    for (let i = 0; i < n; i++) {
+        words.push(readLine().trim());
+    }
+    noPrefix(words);
+}
+// Example usage:
+console.log(noPrefix(['abcd', 'bcd', 'abcde', 'bcde'])); // Output: BAD SET, abcde
+console.log(noPrefix(['ab', 'bc', 'cd'])); // Output: GOOD SET
+console.log(noPrefix(['a', 'ab', 'abc'])); // Output: BAD SET, abc
+console.log(noPrefix(['abc', 'def', 'ghij'])); // Output: GOOD SET
+console.log(noPrefix(['a', 'aa', 'aaa'])); // Output: BAD SET, aaa
+console.log(noPrefix(['a', 'b', 'c', 'd'])); // Output: GOOD SET
+console.log(noPrefix(['abc', 'abcd', 'abcde'])); // Output: BAD SET, abcde
+console.log(noPrefix(['a', 'b', 'c', 'd', 'e'])); // Output: GOOD SET
+
+
+// Example usage:
+console.log(noPrefix(['abcd', 'bcd', 'abcde', 'bcde'])); // Output: BAD SET, abcde
+console.log(noPrefix(['ab', 'bc', 'cd'])); // Output: GOOD SET
+console.log(noPrefix(['a', 'ab', 'abc'])); // Output: BAD SET, abc
+console.log(noPrefix(['abc', 'def', 'ghij'])); // Output: GOOD SET
+console.log(noPrefix(['a', 'aa', 'aaa'])); // Output: BAD SET, aaa
+console.log(noPrefix(['a', 'b', 'c', 'd'])); // Output: GOOD SET
+console.log(noPrefix(['abc', 'abcd', 'abcde'])); // Output: BAD SET, abcde
+
