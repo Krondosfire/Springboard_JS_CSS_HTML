@@ -1527,3 +1527,107 @@ console.log(noPrefix(['a', 'aa', 'aaa'])); // Output: BAD SET, aaa
 console.log(noPrefix(['a', 'b', 'c', 'd'])); // Output: GOOD SET
 console.log(noPrefix(['abc', 'abcd', 'abcde'])); // Output: BAD SET, abcde
 
+// Task:
+// Given an integer, n, print its first 10 multiples. Each multiple n x i (where 1 <= i <= 10) should be printed on a new line in the form: n x i = result.
+// Example:
+// n = 3
+// The printout should look like this:
+
+// 3 x 1 = 3
+// 3 x 2 = 6
+// 3 x 3 = 9
+// 3 x 4 = 12
+// 3 x 5 = 15
+// 3 x 6 = 18
+// 3 x 7 = 21
+// 3 x 8 = 24
+// 3 x 9 = 27
+// 3 x 10 = 30
+// Input Format:
+// A single integer, n.
+// Constraints:
+// 2 <= n <= 20
+
+// process.stdin.resume();
+ // process.stdin.setEncoding('utf-8');
+
+let inputString1 = '';
+let currentLine1 = 0;
+
+// process.stdin.on('data', function(inputStdin) {
+//     inputString1 += inputStdin;
+// });
+
+// process.stdin.on('end', function() {
+//     inputString1 = inputString1.split('\n');
+
+//     main2();
+// });
+
+function readLine1() {
+    return inputString1[currentLine1++];
+}
+
+
+
+function main2() {
+    const n = parseInt(readLine1().trim(), 10);
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${n} x ${i} = ${n * i}`);
+    }
+}
+
+// Example usage:
+console.log(main(3)); // Output: 3 x 1 = 3, 3 x 2 = 6, ..., 3 x 10 = 30
+console.log(main(5)); // Output: 5 x 1 = 5, 5 x 2 = 10, ..., 5 x 10 = 50
+console.log(main(10)); // Output: 10 x 1 = 10, 10 x 2 = 20, ..., 10 x 10 = 100
+console.log(main(15)); // Output: 15 x 1 = 15, 15 x 2 = 30, ..., 15 x 10 = 150
+console.log(main(20)); // Output: 20 x 1 = 20, 20 x 2 = 40, ..., 20 x 10 = 200
+console.log(main(2)); // Output: 2 x 1 = 2, 2 x 2 = 4, ..., 2 x 10 = 20
+console.log(main(8)); // Output: 8 x 1 = 8, 8 x 2 = 16, ..., 8 x 10 = 80
+console.log(main(12)); // Output: 12 x 1 = 12, 12 x 2 = 24, ..., 12 x 10 = 120
+
+// Task:
+// Given a string, S, of length N that is indexed from 0 to N - 1, print its even-indexed and odd-indexed characters as 2 space-separated 
+// strings on a single line (see the Sample below for more detail).
+// Note: 0 is considered to be an even index.
+// Example:
+// s = adbecf
+// Print abc def
+// Input Format:
+// The first line contains an integer, T (the number of test cases).
+// Each line i of the T subsequent lines contain a string, S.
+// Constraints:
+// 1 <= T <= 10
+// 2 <= length of S <= 10000
+
+// 
+
+// function processData(input) {
+//     const lines = input.split('\n');
+//     const T = parseInt(lines[0], 10);
+//     for (let i = 1; i <= T; i++) {
+//         const s = lines[i];
+//         let even = '';
+//         let odd = '';
+//         for (let j = 0; j < s.length; j++) {
+//             if (j % 2 === 0) {
+//                 even += s[j];
+//             } else {
+//                 odd += s[j];
+//             }
+//         }
+//         console.log(`${even} ${odd}`);
+//     }
+// }
+
+// process.stdin.resume();
+// process.stdin.setEncoding("ascii");
+// _input = "";
+// process.stdin.on("data", function (input) {
+//     _input += input;
+// });
+
+// process.stdin.on("end", function () {
+//    processData(_input);
+// });
