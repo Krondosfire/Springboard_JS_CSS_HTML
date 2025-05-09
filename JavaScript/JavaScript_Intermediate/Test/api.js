@@ -1631,3 +1631,183 @@ console.log(main(12)); // Output: 12 x 1 = 12, 12 x 2 = 24, ..., 12 x 10 = 120
 // process.stdin.on("end", function () {
 //    processData(_input);
 // });
+
+// Task:
+// Given an array, A, of N integers, print A's elements in reverse order as a single line of space-separated numbers.
+// Example:
+// A = [1,2,3,4]
+// Print 4 3 2 1. Each integer is separated by one space.
+// Input Format:
+// The first line contains an integer, N (the size of our array).
+// The second line contains N space-separated integers that describe array A's elements.
+// Constraints:
+// 1 <= N <= 1000
+// 1 <= A[i] <= 10000, where A[i] is the i-th integer in the array.
+// "'use strict';
+
+// process.stdin.resume();
+// process.stdin.setEncoding('utf-8');
+
+// let inputString = '';
+// let currentLine = 0;
+
+// process.stdin.on('data', function(inputStdin) {
+//     inputString += inputStdin;
+// });
+
+// process.stdin.on('end', function() {
+//     inputString = inputString.split('\n');
+
+//     main();
+// });
+
+// function readLine() {
+//     return inputString[currentLine++];
+// }
+
+
+
+// function main() {
+//     const n = parseInt(readLine().trim(), 10);
+
+//     const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+//     // Reverse the array and join with spaces
+//     console.log(arr.reverse().join(' '));
+// }"
+
+// Task
+
+// Variables named firstInteger, firstDecimal, and firstString are declared for you in the editor below. 
+// You must use the + operator to perform the following sequence of operations:
+
+// Convert secondInteger to an integer (Number type), then sum it with firstInteger and print the result on a new line using console.log.
+// Convert secondDecimal to a floating-point number (Number type), then sum it with firstDecimal and print the result on a new line using console.log.
+// Print the concatenation of firstString and secondString on a new line using console.log. Note that firstString must be printed first.
+// Input Format
+
+// Data Type	Parameter	Description
+// string	secondInteger	The string representation of an integer you must sum with firstInteger.
+// string	secondDecimal	The string representation of a floating-point number you must sum with firstDecimal.
+// string	secondString	A string of one or more space-separated words you must append to firstString.
+// Output Format
+
+// Print the following three lines of output:
+
+// On the first line, print the sum of firstInteger and the integer representation of secondInteger.
+// On the second line, print the sum of firstDecimal and the floating-point representation of secondDecimal.
+// On the third line, print firstString concatenated with secondString. You must print firstString before secondString.
+function performOperation(secondInteger, secondDecimal, secondString) {
+    const firstInteger = 4;
+    const firstDecimal = 4.0;
+    const firstString = 'HackerRank ';
+    
+    // Print the sum of firstInteger and secondInteger (as a number)
+    console.log(firstInteger + Number(secondInteger));
+    
+    // Print the sum of firstDecimal and secondDecimal (as a number)
+    console.log(firstDecimal + Number(secondDecimal));
+    
+    // Print the concatenation of firstString and secondString
+    console.log(firstString + secondString);
+}
+performOperation('12', '4.0', 'is the best place to learn and practice coding!');
+
+// Task
+
+// First, print each vowel in s on a new line. The English vowels are a, e, i, o, and u, and each vowel must be printed in the same order as it appeared in s.
+// Second, print each consonant (i.e., non-vowel) in s on a new line in the same order as it appeared in s.
+// Function Description
+
+// Complete the vowelsAndConsonants function in the editor below.
+
+// vowelsAndConsonants has the following parameters:
+
+// string s: the string to process
+// Prints
+
+// Print each vowel of s in order on a new line, then print each consonant in order on a new line. Return nothing.
+// Input Format
+
+// There is one line of input with the string s.
+
+// Output Format
+
+// First, print each vowel in s on a new line (in the same order as they appeared in s). Second, print each consonant (i.e., non-vowel) in s on a new line 
+// (in the same order as they appeared in s).
+
+function vowelsAndConsonants(s) {
+    const vowels = 'aeiou';
+    // First print vowels
+    for(let char of s) {
+        if(vowels.includes(char)) {
+            console.log(char);
+        }
+    }
+    // Then print consonants
+    for(let char of s) {
+        if(!vowels.includes(char)) {
+            console.log(char);
+        }
+    }
+}
+
+// Example usage:
+console.log(vowelsAndConsonants('javascriptloops')); // Output: a, i, a, o, j, s, c, r, p, t, l, o, o
+console.log(vowelsAndConsonants('hello')); // Output: e, o, h, l, l
+console.log(vowelsAndConsonants('aeiou')); // Output: a, e, i, o, u
+console.log(vowelsAndConsonants('xyz')); // Output: x, y, z
+
+// Task
+
+// Complete the function in the editor below by returning a RegExp object, , that matches any string  that begins and ends with the same vowel. 
+// Recall that the English vowels are a, e, i, o, and u.
+
+// Constraints
+
+// The length of string  is  .
+// String  consists of lowercase letters only (i.e., [a-z]).
+
+function regexVar() {
+    /*
+     * Declare a RegExp object variable named 're'
+     * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
+     */
+    
+    const re = /^([aeiou]).*\1$/i;
+    /*
+     * Do not remove the return statement
+     */
+    return re;
+}
+// Example usage:
+console.log(regexVar().test('aeiou')); // Output: true
+console.log(regexVar().test('hello')); // Output: false
+console.log(regexVar().test('apple')); // Output: false
+console.log(regexVar().test('banana')); // Output: false
+
+// Task
+
+// Complete the reverseString function; it has one parameter, s. You must perform the following actions:
+
+// Try to reverse string s using the split, reverse, and join methods.
+// If an exception is thrown, catch it and print the contents of the exception's message on a new line.
+// Print s on a new line. If no exception was thrown, then this should be the reversed string; if an exception was thrown, this should be the original string.
+// Input Format
+
+// Locked stub code in the editor reads variable s from stdin and passes it to the function.
+
+function reverseString(s) {
+    try {
+        // Split the string into an array, reverse it, and join it back
+        let reversed = s.split('').reverse().join('');
+            console.log(reversed);
+    } catch(err) {
+        // If s is not a string, print the error message
+        console.log(err.message);
+        console.log(s);
+    }
+}
+// Example usage:
+console.log(reverseString('hello')); // Output: 'olleh'
+console.log(reverseString('world')); // Output: 'dlrow'
+console.log(reverseString('12345')); // Output: '54321'
