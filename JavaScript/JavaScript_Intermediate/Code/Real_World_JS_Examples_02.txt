@@ -307,23 +307,278 @@ process.stdin.on("end", function () {
 });
 "
 
+Task:
+Given an array, A, of N integers, print A's elements in reverse order as a single line of space-separated numbers.
+Example:
+A = [1,2,3,4]
+Print 4 3 2 1. Each integer is separated by one space.
+Input Format:
+The first line contains an integer, N (the size of our array).
+The second line contains N space-separated integers that describe array A's elements.
+Constraints:
+1 <= N <= 1000
+1 <= A[i] <= 10000, where A[i] is the i-th integer in the array.
+
+"'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
 
 
 
+function main() {
+    const n = parseInt(readLine().trim(), 10);
+
+    const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    // Reverse the array and join with spaces
+    console.log(arr.reverse().join(' '));
+}"
 
 
+Task:
+Complete the isPositive function below. It has one integer parameter, a. If the value of a is positive, it must return the string YES. 
+Otherwise, it must throw an Error according to the following rules:
+If a is 0, throw an Error with  message = Zero Error.
+If a is negative, throw an Error with  message = Negative Error.
+Input Format:
+Locked stub code in the editor reads the following input from stdin and passes each value of a to the function as an argument:
+The first line is an integer, n, denoting the number of times the function will be called with some a.
+Each line i of the n subsequent lines contains an integer denoting some a.
+Constraints:
+1 <= n <= 5
+-100 <= a <= 100
+
+"'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', inputStdin => {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', _ => {
+    inputString = inputString.trim().split('\n').map(string => {
+        return string.trim();
+    });
+    
+    main();    
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+/*
+ * Complete the isPositive function.
+ * If 'a' is positive, return "YES".
+ * If 'a' is 0, throw an Error with the message "Zero Error"
+ * If 'a' is negative, throw an Error with the message "Negative Error"
+ */
+function isPositive(a) {
+    
+}
 
 
+function main() {
+    const n = +(readLine());
+    
+    for (let i = 0; i < n; i++) {
+        const a = +(readLine());
+      
+        try {
+            console.log(isPositive(a));
+        } catch (e) {
+            console.log(e.message);
+        }
+    }
+}"
 
 
+Task:
+We provide the implementation for a Rectangle class in the editor. Perform the following tasks:
+
+Add an area method to Rectangle's prototype.
+Create a Square class that satisfies the following:
+It is a subclass of Rectangle.
+It contains a constructor and no other methods.
+It can use the Rectangle class' area method to print the area of a Square object.
+Locked code in the editor tests the class and method implementations and prints the area values to STDOUT.
+"class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+}
+
+/*
+ *  Write code that adds an 'area' method to the Rectangle class' prototype
+ */
+
+/*
+ * Create a Square class that inherits from Rectangle and implement its class constructor
+ */
 
 
+if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+    const rec = new Rectangle(3, 4);
+    const sqr = new Square(3);
+    
+    console.log(rec.area());
+    console.log(sqr.area());
+} else {
+    console.log(-1);
+    console.log(-1);
+}"
 
 
+Task
 
+Implement a simple calculator that performs the following operations on binary numbers: 
+addition, subtraction, multiplication, and division. 
+Note that division operation must be integer division only; for example, 1001/100 = 10, 1110/101=10, and 101/1=101.
 
+The calculator's initial state must look like this:
+Element IDs. Each element in the document must have an id, specified below:
 
+innerHTML	id	Description/Behavior
+res	Contains the result of button presses.
+btns	A button container that displays all eight calculator buttons.
+0	btn0	A button expressing binary digit .
+1	btn1	A button expressing binary digit .
+C	btnClr	A button to clear the contents of .
+=	btnEql	A button to evaluate the contents of the expression in .
++	btnSum	A button for the addition operation.
+-	btnSub	A button for the subtraction operation.
+*	btnMul	A button for the multiplication operation.
+/	btnDiv	A button for the integer division operation.
+Styling. The document's elements must have the following styles:
 
+body has a width of 33%.
+res has a background-color of lightgray, a border that is solid, a height of 48px, and a font-size of 20px.
+btn0 and btn1 have a background-color of lightgreen and a color of brown.
+btnClr and btnEql have a background-color of darkgreen and a color of white.
+btnSum, btnSub, btnMul, and btnDiv have a background-color of black, a color of red.
+All the buttons in btns have a width of 25%, a height of 36px, a font-size of 18px, margin of 0px, and float value left.
+
+Constraints
+
+All expressions in the test dataset are entered in the form operand1 --> operator --> operand2, 
+where operand1 is the first binary number, operand2 is the second binary number, and operator is in the set {+,-,*,=}.
+Both operands will always be positive integers when converted from base-2 to base-10.
+All expressions will be valid.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binary Calculator</title>
+    <style>
+        body {
+            width: 33%;
+        }
+        #res {
+            background-color: lightgray;
+            border: solid;
+            height: 48px;
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: right;
+            padding: 5px;
+            overflow-x: auto;
+        }
+        #btns {
+            width: 100%;
+        }
+        #btns button {
+            width: 25%;
+            height: 36px;
+            font-size: 18px;
+            margin: 0px;
+            float: left;
+        }
+        #btn0, #btn1 {
+            background-color: lightgreen;
+            color: brown;
+        }
+        #btnClr, #btnEql {
+            background-color: darkgreen;
+            color: white;
+        }
+        #btnSum, #btnSub, #btnMul, #btnDiv {
+            background-color: black;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="res"></div>
+    <div id="btns">
+        <button id="btn0">0</button>
+        <button id="btn1">1</button>
+        <button id="btnClr">C</button>
+        <button id="btnEql">=</button>
+        <button id="btnSum">+</button>
+        <button id="btnSub">-</button>
+        <button id="btnMul">*</button>
+        <button id="btnDiv">/</button>
+    </div>
+    <script>
+        const res = document.getElementById('res');
+        document.getElementById('btn0').onclick = () => res.innerHTML += '0';
+        document.getElementById('btn1').onclick = () => res.innerHTML += '1';
+        document.getElementById('btnSum').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '+';
+        };
+        document.getElementById('btnSub').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '-';
+        };
+        document.getElementById('btnMul').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '*';
+        };
+        document.getElementById('btnDiv').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '/';
+        };
+        document.getElementById('btnClr').onclick = () => res.innerHTML = '';
+        document.getElementById('btnEql').onclick = () => {
+            // Find the operator
+            let expr = res.innerHTML;
+            let match = expr.match(/^([01]+)([+\-*/])([01]+)$/);
+            if (!match) return;
+            let op1 = parseInt(match[1], 2);
+            let operator = match[2];
+            let op2 = parseInt(match[3], 2);
+            let result;
+            switch (operator) {
+                case '+': result = op1 + op2; break;
+                case '-': result = op1 - op2; break;
+                case '*': result = op1 * op2; break;
+                case '/': result = Math.floor(op1 / op2); break; // integer division
+            }
+            res.innerHTML = result.toString(2);
+        };
+    </script>
+</body>
+</html>
 
 
 

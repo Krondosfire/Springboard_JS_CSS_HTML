@@ -5,7 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How the Web Works and AJAX</title>
     <link rel="stylesheet" href="style.css">
-    
+    <style>
+        /* body {
+             width: 33%; 
+        } */
+        #res {
+            background-color: lightgray;
+            border: solid;
+            height: 48px;
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: right;
+            padding: 5px;
+            overflow-x: auto;
+        }
+        #btns {
+            width: 100%;
+        }
+        #btns button {
+            width: 25%;
+            height: 36px;
+            font-size: 18px;
+            margin: 0px;
+            float: left;
+        }
+        #btn0, #btn1 {
+            background-color: lightgreen;
+            color: brown;
+        }
+        #btnClr, #btnEql {
+            background-color: darkgreen;
+            color: white;
+        }
+        #btnSum, #btnSub, #btnMul, #btnDiv {
+            background-color: black;
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Axios</h1>
@@ -98,7 +134,55 @@
 </div>
         </li>
     </ul>
-                
+<div id="res"></div>
+    <div id="btns">
+        <button id="btn0">0</button>
+        <button id="btn1">1</button>
+        <button id="btnClr">C</button>
+        <button id="btnEql">=</button>
+        <button id="btnSum">+</button>
+        <button id="btnSub">-</button>
+        <button id="btnMul">*</button>
+        <button id="btnDiv">/</button>
+    </div>
+
+
+
+ <script>
+        const res = document.getElementById('res');
+        document.getElementById('btn0').onclick = () => res.innerHTML += '0';
+        document.getElementById('btn1').onclick = () => res.innerHTML += '1';
+        document.getElementById('btnSum').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '+';
+        };
+        document.getElementById('btnSub').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '-';
+        };
+        document.getElementById('btnMul').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '*';
+        };
+        document.getElementById('btnDiv').onclick = () => {
+            if (res.innerHTML !== '' && !/[+\-*/]$/.test(res.innerHTML)) res.innerHTML += '/';
+        };
+        document.getElementById('btnClr').onclick = () => res.innerHTML = '';
+        document.getElementById('btnEql').onclick = () => {
+            // Find the operator
+            let expr = res.innerHTML;
+            let match = expr.match(/^([01]+)([+\-*/])([01]+)$/);
+            if (!match) return;
+            let op1 = parseInt(match[1], 2);
+            let operator = match[2];
+            let op2 = parseInt(match[3], 2);
+            let result;
+            switch (operator) {
+                case '+': result = op1 + op2; break;
+                case '-': result = op1 - op2; break;
+                case '*': result = op1 * op2; break;
+                case '/': result = Math.floor(op1 / op2); break; // integer division
+            }
+            res.innerHTML = result.toString(2);
+        };
+    </script>               
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="module" src="api.js"></script>   
 </body>

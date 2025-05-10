@@ -1879,3 +1879,17 @@ if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.string
     console.log(-1);
 }
 
+function factorial(n) {
+    if(n === 0 || n === 1) {
+        return 1;
+    }
+    return n* factorial(n - 1);
+}
+// Example usage:
+console.log(factorial(5)); // Output: 120
+console.log(factorial(0)); // Output: 1
+console.log(factorial(1)); // Output: 1
+console.log(factorial(10)); // Output: 3628800
+console.log(factorial(3)); // Output: 6
+console.log(factorial(4)); // Output: 24
+console.log(factorial(6)); // Output: 720
