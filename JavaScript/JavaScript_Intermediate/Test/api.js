@@ -1811,3 +1811,71 @@ function reverseString(s) {
 console.log(reverseString('hello')); // Output: 'olleh'
 console.log(reverseString('world')); // Output: 'dlrow'
 console.log(reverseString('12345')); // Output: '54321'
+
+// Task:
+// Complete the isPositive function below. It has one integer parameter, a. If the value of a is positive, it must return the string YES. 
+// Otherwise, it must throw an Error according to the following rules:
+// If a is 0, throw an Error with  message = Zero Error.
+// If a is negative, throw an Error with  message = Negative Error.
+// Input Format:
+// Locked stub code in the editor reads the following input from stdin and passes each value of a to the function as an argument:
+// The first line is an integer, n, denoting the number of times the function will be called with some a.
+// Each line i of the n subsequent lines contains an integer denoting some a.
+// Constraints:
+// 1 <= n <= 5
+// -100 <= a <= 100
+
+// function isPositive(a) {
+//     if(a > 0) {
+//         return "YES";
+//     } else if(a === 0) {
+//         throw new Error("Zero Error");
+//     } else {
+//         throw new Error("Negative Error");
+//     }
+// }
+// Example usage:
+// console.log(isPositive(5)); // Output: 'YES'
+// console.log(isPositive(0)); // Output: 'Zero Error'
+// console.log(isPositive(-5)); // Output: 'Negative Error'
+// console.log(isPositive(10)); // Output: 'YES'
+// console.log(isPositive(-10)); // Output: 'Negative Error'
+// console.log(isPositive(100)); // Output: 'YES'
+
+// Task:
+// We provide the implementation for a Rectangle class in the editor. Perform the following tasks:
+
+// Add an area method to Rectangle's prototype.
+// Create a Square class that satisfies the following:
+// It is a subclass of Rectangle.
+// It contains a constructor and no other methods.
+// It can use the Rectangle class' area method to print the area of a Square object.
+// Locked code in the editor tests the class and method implementations and prints the area values to STDOUT.
+
+class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+}
+
+Rectangle.prototype.area = function() {
+    return this.w * this.h;
+};
+class Square extends Rectangle {
+    constructor(side) {
+        super(side, side);
+    }
+}
+
+if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify([ 'constructor' ])) {
+    const rec = new Rectangle(3, 4);
+    const sqr = new Square(3);
+
+    console.log(rec.area());
+    console.log(sqr.area());
+} else {
+    console.log(-1);
+    console.log(-1);
+}
+
