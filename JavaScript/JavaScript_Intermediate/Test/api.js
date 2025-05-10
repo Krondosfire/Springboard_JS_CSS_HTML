@@ -1893,3 +1893,102 @@ console.log(factorial(10)); // Output: 3628800
 console.log(factorial(3)); // Output: 6
 console.log(factorial(4)); // Output: 24
 console.log(factorial(6)); // Output: 720
+
+// Task
+// Complete the function in the editor. It has two parameters: a and b. It must return an object modeling a rectangle that has the following properties:
+// length: This value is equal to a.
+// width: This value is equal to b.
+// perimeter: This value is equal to 2 * (a + b).
+// area: This value is equal to a * b.
+// Note: The names of the object's properties must be spelled correctly to pass this challenge.
+// Input Format:
+// The first line contains an integer denoting a.
+// The second line contains an integer denoting b.
+// Constraints:
+// 1 <= a,b <= 100
+
+// function Rectangle1(a, b) {
+//     this.length = a;
+//     this.width = b;
+//     this.perimeter = 2 * ( a + b);
+//     this.area = a * b;
+// }
+// // Example usage:
+// console.log(Rectangle1(3, 4)); // Output: { length: 3, width: 4, perimeter: 14, area: 12 }
+// console.log(Rectangle1(5, 6)); // Output: { length: 5, width: 6, perimeter: 22, area: 30 }
+// console.log(Rectangle1(10, 20)); // Output: { length: 10, width: 20, perimeter: 60, area: 200 }
+// console.log(Rectangle1(1, 1)); // Output: { length: 1, width: 1, perimeter: 4, area: 1 }
+
+// Task:
+// Declare a constant variable, PI, and assign it the value Math.PI. You will not pass this challenge unless the variable is declared as a constant and named PI (uppercase).
+// Read a number, r, denoting the radius of a circle from stdin.
+// Use PI and r to calculate the area and perimeter of a circle having radius r.
+// Print area as the first line of output and print perimeter as the second line of output.
+// Input Format:
+// A single integer, r, denoting the radius of a circle.
+// Constraints:
+// 0 < r <= 100
+// r is a floating-point number scaled to at most 3 decimal places.
+
+function circlePI() {
+    const PI = Math.PI;
+    const r = parseFloat(readLine());
+
+    const area = PI * r * r;
+    const perimeter = 2 * PI * r;
+    console.log(area);
+    console.log(perimeter);
+
+    try {
+        PI = 0;
+        console.log(PI);
+    } catch(error) {
+        console.error("You corectly declared 'PI' as a constant.");
+    }
+}
+
+// Example usage:
+console.log(circlePI(3)); // Output: 28.274333882308138, 18.84955592153876
+console.log(circlePI(5)); // Output: 78.53981633974483, 31.41592653589793
+console.log(circlePI(10)); // Output: 314.1592653589793, 62.83185307179586
+
+// Task:
+// Complete the getGrade(score) function in the editor. It has one parameter: an integer, score, denoting the number of points Julia earned on an exam. 
+// It must return the letter corresponding to her grade according to the following rules:
+
+// If 25 < score <= 30, then grade = A.
+// If 20 < score <= 25, then grade = B.
+// If 15 < score <= 20, then grade = C.
+// If 10 < score <= 15, then grade = D.
+// If 5 < score <= 10, then grade = E.
+// If 0 < score <= 5, then grade = F.
+// Input Format:
+// Stub code in the editor reads a single integer denoting score from stdin and passes it to the function.
+// Constraints:
+// 0 <= score <= 30
+
+function getGrade(score) {
+    let grade;
+    if (score > 25 && score <= 30) {
+        grade = 'A';
+    } else if (score > 20 && score <= 25) {
+        grade = 'B';
+    } else if (score > 15 && score <= 20) {
+        grade = 'C';
+    } else if (score > 10 && score <= 15) {
+        grade = 'D';
+    } else if (score > 5 && score <= 10) {
+        grade = 'E';
+    } else {
+        grade = 'F';
+    }
+    return grade;
+}
+// Example usage:
+console.log(getGrade(28)); // Output: 'A'
+console.log(getGrade(22)); // Output: 'B'
+console.log(getGrade(18)); // Output: 'C'
+console.log(getGrade(12)); // Output: 'D'
+console.log(getGrade(8)); // Output: 'E'
+console.log(getGrade(3)); // Output: 'F'
+console.log(getGrade(30)); // Output: 'A'
