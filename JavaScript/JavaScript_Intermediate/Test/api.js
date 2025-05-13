@@ -1992,3 +1992,265 @@ console.log(getGrade(12)); // Output: 'D'
 console.log(getGrade(8)); // Output: 'E'
 console.log(getGrade(3)); // Output: 'F'
 console.log(getGrade(30)); // Output: 'A'
+
+// Recursive Method for Calculating Factorial
+// Function Description:
+// Complete the factorial function in the editor below. Be sure to use recursion.
+// factorial has the following paramter:
+// int n: an integer
+// Returns:
+// int: the factorial of n
+// Note: If you fail to use recursion or fail to name your recursive function factorial or Factorial, you will get a score of .
+// Input Format:
+// A single integer, n (the argument to pass to factorial).
+// Constraints:
+// 2 <= n <= 12
+
+// 'use strict';
+
+// const fs = require('fs');
+
+// process.stdin.resume();
+// process.stdin.setEncoding('utf-8');
+
+// let inputString = '';
+// let currentLine = 0;
+
+// process.stdin.on('data', function(inputStdin) {
+//     inputString += inputStdin;
+// });
+
+// process.stdin.on('end', function() {
+//     inputString = inputString.split('\n');
+
+//     main();
+// });
+
+// function readLine() {
+//     return inputString[currentLine++];
+// }
+
+// /*
+//  * Complete the 'factorial' function below.
+//  *
+//  * The function is expected to return an INTEGER.
+//  * The function accepts INTEGER n as parameter.
+//  */
+
+// function factorial(n) {
+//     // Write your code here
+// 	if(n === 0 || n === 1) {
+// 		return 1;
+// 	}
+// 	return n * factorial(n - 1);
+
+// }
+
+// function main() {
+//     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+//     const n = parseInt(readLine().trim(), 10);
+
+//     const result = factorial(n);
+
+//     ws.write(result + '\n');
+
+//     ws.end();
+// }
+
+// Task:
+// Given a base- integer, , convert it to binary (base-2). Then find and print the base-10 integer denoting the maximum 
+// number of consecutive 1's in n's binary representation. When working with different bases, it is common to show the base as a subscript.
+// Example:
+// n = 125
+// The binary representation of 125 base 10 is 1111101 base 2. In base 10, there are 5 and 1 consecutive ones in two groups. Print the maximum, 5.
+// Input Format:
+// A single integer, n.
+// Constraints:
+// 1 <= n <= 10^6
+
+// 'use strict';
+
+// process.stdin.resume();
+// process.stdin.setEncoding('utf-8');
+
+// let inputString = '';
+// let currentLine = 0;
+
+// process.stdin.on('data', function(inputStdin) {
+//     inputString += inputStdin;
+// });
+
+// process.stdin.on('end', function() {
+//     inputString = inputString.split('\n');
+
+//     main();
+// });
+
+// function readLine() {
+//     return inputString[currentLine++];
+// }
+
+
+
+// function main() {
+//     const n = parseInt(readLine().trim(), 10);
+//     const binaryStr = n.toString(2);
+//     const maxConsecutiveOnes = Math.max(...binaryStr.split('0').map(group => group.length));
+//     console.log(maxConsecutiveOnes);
+// }
+
+// Task:
+// Given  names and phone numbers, assemble a phone book that maps friends' names to their respective phone numbers. 
+// You will then be given an unknown number of names to query your phone book for. 
+// For each name queried, print the associated entry from your phone book on a new line in the form name=phoneNumber; 
+// if an entry for name is not found, print Not found instead.
+// Note: Your phone book should be a Dictionary/Map/HashMap data structure.
+// Input Format:
+// The first line contains an integer, n, denoting the number of entries in the phone book.
+// Each of the n subsequent lines describes an entry in the form of 2 space-separated values on a single line. 
+// The first value is a friend's name, and the second value is an 8-digit phone number.
+// After the n lines of phone book entries, there are an unknown number of lines of queries. 
+// Each line (query) contains a name to look up, and you must continue reading lines until there is no more input.
+// Note: Names consist of lowercase English alphabetic letters and are first names only.
+// Constraints:
+// 1 <= n <= 10^5
+// 1 <= queries <= 10^5
+
+function processData06(input) {
+    //Enter your code here
+    const lines = input.trim().split('\n');
+    const n = parseInt(lines[0]);
+    const phoneBook = {};
+
+    // Build the phone book
+    for(let i = 1; i <= n; i++) {
+        const [name, number] = lines[i].split(' ');
+        phoneBook[name] = number;
+    }
+    // Process queries
+    for(let i = n + 1; i < lines.length; i++) {
+        const query = lines[i];
+        if(phoneBook.hasOwnProperty(query)) {
+            console.log(`${query}=${phoneBook[query]}`);
+        } else {
+            console.log('Not found');
+        }
+    }
+} 
+
+// process.stdin.resume();
+// process.stdin.setEncoding("ascii");
+// _input = "";
+// process.stdin.on("data", function (input) {
+//     _input += input;
+// });
+
+// process.stdin.on("end", function () {
+//    processData(_input);
+// });
+
+// Example usage:
+console.log(processData06('3\nsam 12345678\njohn 87654321\njane 23456789\nsam\njohn\njane\n')); // Output: sam=12345678, john=87654321, jane=23456789
+console.log(processData06('2\nalice 12345678\nbob 87654321\ncharlie\nbob\n')); // Output: Not found, bob=87654321
+console.log(processData06('4\njohn 12345678\njane 87654321\nsam 23456789\ntom 34567890\njohn\njane\ntom\n')); // Output: john=12345678, jane=87654321, tom=34567890
+console.log(processData06('1\nalice 12345678\nbob\n')); // Output: Not found
+console.log(processData06('5\ncharlie 12345678\ndave 87654321\nedward 23456789\nfrank 34567890\ngary 45678901\ncharlie\ngary\n')); // Output: charlie=12345678, gary=45678901
+console.log(processData06('3\nalice 12345678\nbob 87654321\ncharlie 23456789\nalice\nbob\n')); // Output: alice=12345678, bob=87654321
+
+// Task:
+// Given an array, X, of N integers, calculate and print the respective mean, median, and mode on separate lines. 
+// If your array contains more than one modal value, choose the numerically smallest one.
+// Note: Other than the modal value (which will always be an integer), your answers should be in decimal form, 
+// rounded to a scale of 1 decimal place (i.e., 12.3, 7.0 format).
+// Example:
+// N = 6
+// X = [1,2,3,4,5,5]
+// The mean is 20/6 = 3.3.
+// The median is (3 + 4) / 2 = 3.5.
+// The mode is 5 because 5 occurs most frequently.
+// Input Format:
+// The first line contains an integer, N, the number of elements in the array.
+// The second line contains N space-separated integers that describe the array's elements.
+// Constraints:
+// 10 <= N <= 2500
+// 0 < x[i] <= 10^5, where x[i] is the i-th element of the array.
+
+function processData07(input) {
+    const lines = input.trim().split('\n');
+    const N = parseInt(lines[0]);
+    const X = lines[1].split(' ').map(Number);
+
+    // Calculate mean
+    const mean = (X.reduce((a, b) => a + b, 0) / N).toFixed(1);
+
+    // Median
+    X.sort((a, b) => a - b);
+    let median;
+    if(N % 2 === 0) {
+        median = ((X[N / 2 - 1] + X[N / 2]) / 2).toFixed(1);
+    } else {
+        median = X[Math.floor(N / 2)].toFixed(1);
+    }
+    // Mode
+    const freq = {};
+    let maxFreq = 0;
+    let mode = X[0];
+    for(let num of X) {
+        freq[num] = (freq[num] || 0) + 1;
+        if(freq[num] > maxFreq) {
+            maxFreq = freq[num];
+            mode = num;
+        } else if(freq[num] === maxFreq && num < mode) {
+            mode = num;
+        }
+    }
+    console.log(mean);
+    console.log(median);
+    console.log(mode);
+}
+
+// Example usage:
+console.log(processData07('6\n1 2 3 4 5 5')); // Output: 3.3, 3.5, 5
+console.log(processData07('5\n1 2 2 3 4')); // Output: 2.4, 2, 2
+console.log(processData07('4\n1 2 3 4')); // Output: 2.5, 2.5, 1
+console.log(processData07('7\n1 2 3 4 5 5 5')); // Output: 3.6, 4, 5
+console.log(processData07('3\n1 2 3')); // Output: 2.0, 2, 1
+
+// Task:
+// Given an array, X, of N integers and an array, W, representing the respective weights of X's elements, 
+// calculate and print the weighted mean of X's elements. Your answer should be rounded to a scale of 1 decimal place (i.e., 12.3 format).
+// Example:
+// X = [1,2,3]
+// W = [5,6,7]
+// The array of values X[i] * W[i] = [5,12,21]. Their sum is 38. The sum of W = 18. The weighted mean is 38 / 18 = 2.11111.... Print 2.1 and return.
+// Function Description:
+// Complete the weightedMean function in the editor below.
+// weightedMean has the following parameters:
+// - int X[N]: an array of values
+// - int W[N]: an array of weights
+// Prints:
+// - float: the weighted mean to one decimal place
+// Input Format:
+// The first line contains an integer, N, the number of elements in arrays X and W.
+// The second line contains N space-separated integers that descdribe the elements of array X.
+// The third line contains N space-separated integers that descdribe the elements of array W.
+// Constraints:
+// 5 <= N <= 50
+// 0 < X[i] <= 100, where X[i] is the i-th element of array X.
+// 0 < W[i] <= 100, where W[i] is the i-th element of array W.
+
+function weightedMean(X, W) {
+    let numeratorSum = 0;
+    let denominatorSum = 0;
+    for(let i = 0; i < X.length; i++) {
+        numeratorSum += X[i] * W[i];
+        denominatorSum += W[i];
+    }
+    const mean = numeratorSum / denominatorSum;
+    console.log(mean.toFixed(1));
+}
+
+//  Example usage
+console.log(weightedMean([1, 2, 3], [5, 6, 7]));
+console.log(weightedMean([5], [10, 40, 30, 50, 20]));
